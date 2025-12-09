@@ -1,8 +1,10 @@
 getBingImages([
-    "/th?id=OHR.TexasIndigoBunting_ZH-CN3699392300_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.NamibiaCanyon_ZH-CN3973338246_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.CarlsbadNP_ZH-CN4136753542_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.BlueCityIndia_ZH-CN4275229255_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.ReconquistaVigo_ZH-CN4619580424_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.PacificRimNationalPark_ZH-CN5809123424_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
-    "/th?id=OHR.TarangireElephants_ZH-CN5447385839_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"])
+    "/th?id=OHR.MilkyWayPortugal_ZH-CN8878883229_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.MaligneLakeJasper_ZH-CN2664289451_UHD.jpg&pid=hp&w=1920",
+    "th?id=OHR.EuropeFromISS_ZH-CN0722816540_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.BigMoon_ZH-CN2508603883_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.WebbPillars_ZH-CN9054137596_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.HorseheadRock_ZH-CN9319651125_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.SpaceFlight_ZH-CN0927394503_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.BigBendMilkyWay_ZH-CN7709015605_UHD.jpg&pid=hp&w=1920",
+    "/th?id=OHR.OzoneEarth_ZH-CN0993915980_UHD.jpg&pid=hp&w=1920"])
