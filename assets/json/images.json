@@ -1,10 +1,10 @@
 getBingImages([
-    "/th?id=OHR.MaligneLakeJasper_ZH-CN2664289451_UHD.jpg",
-    "/th?id=OHR.BigMoon_ZH-CN2508603883_UHD.jpg",
-    "/th?id=OHR.MilkyWayPortugal_ZH-CN8878883229_UHD.jpg",
-    "th?id=OHR.EuropeFromISS_ZH-CN0722816540_UHD.jpg",
-    "/th?id=OHR.WebbPillars_ZH-CN9054137596_UHD.jpg",
-    "/th?id=OHR.HorseheadRock_ZH-CN9319651125_UHD.jpg",
-    "/th?id=OHR.SpaceFlight_ZH-CN0927394503_UHD.jpg",
-    "/th?id=OHR.BigBendMilkyWay_ZH-CN7709015605_UHD.jpg",
-    "/th?id=OHR.OzoneEarth_ZH-CN0993915980_UHD.jpg"])
+    "/th?id=OHR.MaligneLakeJasper_ZH-CN2664289451_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.BigMoon_ZH-CN2508603883_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.MilkyWayPortugal_ZH-CN8878883229_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.WebbPillars_ZH-CN9054137596_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.HorseheadRock_ZH-CN9319651125_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.SpaceFlight_ZH-CN0927394503_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.BigBendMilkyWay_ZH-CN7709015605_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp",
+    "/th?id=OHR.OzoneEarth_ZH-CN0993915980_1920x1080.jpg&rf=LaDigue_1920x1080.jpg&pid=hp"
+    ])
