@@ -39,7 +39,7 @@ function getBingImages(imgUrls) {
 	if (isNaN(index) || index == 7) index = 0;
 	else index++;
 	var imgUrl = imgUrls[index];
-	var url = "https://cn.bing.com" + imgUrl;
+	var url = "https://www.bing.com" + imgUrl;
 	panel.style.background = "url('" + url + "') center center no-repeat #666";
 	panel.style.backgroundSize = "cover";
 	sessionStorage.setItem(indexName, index);
@@ -49,29 +49,6 @@ function decryptEmail(encoded) {
 	var address = atob(encoded);
 	window.location.href = "mailto:" + address;
 }
-
-document.addEventListener('DOMContentLoaded', function () {
-	// 获取一言数据
-	var xhr = new XMLHttpRequest();
-	xhr.onreadystatechange = function () {
-		if (this.readyState == 4 && this.status == 200) {
-			var res = JSON.parse(this.responseText);
-			document.getElementById('description').innerHTML = res.hitokoto + "<br/> -「<strong>" + res.from + "</strong>」";
-		}
-	};
-	xhr.open("GET", "/*https://v1.hitokoto.cn*/", true);
-	xhr.send();
-
-	var iUpElements = document.querySelectorAll(".iUp");
-	iUpElements.forEach(function (element) {
-		iUp.up(element);
-	});
-
-	var avatarElement = document.querySelector(".js-avatar");
-	avatarElement.addEventListener('load', function () {
-		avatarElement.classList.add("show");
-	});
-});
 
 var btnMobileMenu = document.querySelector('.btn-mobile-menu__icon');
 var navigationWrapper = document.querySelector('.navigation-wrapper');
