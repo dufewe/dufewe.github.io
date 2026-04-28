@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dufewe's Resume">
-    <meta name="keywords" content="Dufewe, Resume">
+    <meta name="keywords" content="Dufewe, Resume, Particle Physics, HEP">
     <meta name="author" content="Dufewe">
     <title>Resume - Dufewe Fangu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,6 +62,11 @@
         .back-home { text-align: center; padding: 20px; margin-top: 40px; }
         .back-home a { color: #eee; text-decoration: none; font-size: 0.95em; }
         .back-home a:hover { color: #fff; }
+        .orcid-link { display: inline-flex; align-items: center; gap: 8px; color: #4CAF50; text-decoration: none; font-size: 0.95em; }
+        .orcid-link:hover { color: #81C784; }
+        .orcid-link svg { width: 18px; height: 18px; fill: currentColor; }
+        .research-interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+        .interest-tag { background: rgba(255,255,255,0.08); color: #ddd; padding: 6px 14px; border-radius: 4px; font-size: 0.85em; border: 1px solid rgba(255,255,255,0.15); }
         @media (max-width: 900px) { 
             .resume-layout { flex-direction: column; overflow-y: auto; height: auto; }
             .resume-left { width: 100%; padding: 40px 20px; }
@@ -76,7 +81,6 @@
         <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
     </span>
     
-    <!-- 内容层 -->
     <div class="resume-layout" style="position: relative; z-index: 5;">
         <aside class="resume-left">
             <div class="ih-item circle effect right_to_left">
@@ -93,23 +97,26 @@
             <h1 class="panel-cover__title panel-title">Dufewe Fangu</h1>
             <p class="panel-cover__subtitle panel-subtitle">Physics Learner | AI Amateur</p>
             <hr class="panel-cover__divider" />
-            <p class="panel-cover__description">Ph.D candidate, majoring in theoretical physics</p>
+            <p class="panel-cover__description">Ph.D. candidate in Particle Physics at Central China Normal University</p>
             <div class="navigation-wrapper">
                 <div>
                     <nav class="cover-navigation cover-navigation--primary">
                         <ul class="navigation">
                             <li class="navigation__item"><a href="https://dufewe.github.io/" class="blog-button">Home</a></li>
-                            <li class="navigation__item"><a href="https://library.dufewe.io" class="blog-button" target="_blank">Library</a></li>
-                            <li class="navigation__item"><a href="https://fnos.net/fancy-nas" class="blog-button" target="_blank">iCloud</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/library" class="blog-button" target="_blank">Library</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/flav-data" class="blog-button" target="_blank">FlavData</a></li>
                         </ul>
                     </nav>
                 </div>
                 <div class="">
                     <nav class="cover-navigation navigation--social">
                         <ul class="navigation">
-                            <li class="navigation__item"><a href="https://github.com/" title="GitHub" target="_blank"><span class='social iconfont icon-Github'></span></a></li>
-                            <li class="navigation__item"><a href="https://www.bilibili.com/" title="Bilibili" target="_blank"><span class='socail iconfont icon-Bilibili'></span></a></li>
-                            <li class="navigation__item"><a href="https://music.163.com/" title="Netease Music" target="_blank"><span class='social iconfont icon-Netease_Music'></span></a></li>
+                            <li class="navigation__item"><a href="https://github.com/dufewe" title="GitHub" target="_blank"><span class='social iconfont icon-Github'></span></a></li>
+                            <li class="navigation__item"><a href="https://x.com/DufeweFangu" title="X" target="_blank"><span class='social iconfont icon-X'></span></a></li>
+                            <li class="navigation__item"><a href="https://space.bilibili.com/415379727" title="Bilibili" target="_blank"><span class='social iconfont icon-Bilibili'></span></a></li>
+                            <li class="navigation__item"><a href="https://www.zhihu.com/people/44-83-24-90" title="Zhihu" target="_blank"><span class='social iconfont icon-Zhihu'></span></a></li>
+                            <li class="navigation__item"><a href="https://inspirehep.net/authors/1964654" title="Inspire-HEP" target="_blank"><span class='social iconfont icon-InspireHEP'></span></a></li>
+                            <li class="navigation__item"><a href="https://steamcommunity.com/id/8613767405725/" title="Steam" target="_blank"><span class='social iconfont icon-Steam'></span></a></li>
                         </ul>
                     </nav>
                 </div>
@@ -117,39 +124,77 @@
             <div class="back-home"><a href="https://dufewe.github.io/">← Back to Home</a></div>
         </aside>
         <main class="resume-right">
-        <section class="resume-section">
-            <h2 class="section-title">About Me</h2>
-            <p class="item-description">To be added</p>
-        </section>
-        <section class="resume-section">
-            <h2 class="section-title">Experience (to be corrected)</h2>
-            <div class="resume-item">
-                <div class="item-header"><h3 class="item-title">Senior Software Engineer</h3><span class="item-period">2023 - Present</span></div>
-                <p class="item-subtitle">Tech Company Inc.</p>
-                <div class="item-description"><ul><li>Lead development of scalable microservices architecture</li><li>Implemented AI-powered features improving engagement by 40%</li><li>Mentor junior developers</li></ul></div>
-            </div>
-        </section>
-        <section class="resume-section">
-            <h2 class="section-title">Education</h2>
-            <div class="resume-item">
-                <div class="item-header"><h3 class="item-title">M.S. to be added</h3><span class="item-period">2016 - 2018</span></div>
-                <p class="item-subtitle">University</p>
-            </div>
-            <div class="resume-item">
-                <div class="item-header"><h3 class="item-title">B.S. to be added</h3><span class="item-period">2012 - 2016</span></div>
-                <p class="item-subtitle">University</p>
-            </div>
-        </section>
-        <section class="resume-section">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-grid">
-                <span class="skill-tag">to be added</span>
-            </div>
-        </section>
+            <section class="resume-section">
+                <h2 class="section-title">About Me</h2>
+                <p class="item-description">
+                    Currently, I am one Ph.D. candidate in Particle Physics at Central China Normal University. My research lies at the intersection of flavor physics, effective field theory, and phenomenology beyond the Standard Model. I work on semi-leptonic B decays, flavor anomalies, and cosmological tensions — probing new physics through precision theoretical calculations and phenomenological analyses.
+                </p>
+                <p class="item-description" style="margin-top: 12px;">
+                    Beyond theory, I am passionate about bringing modern AI into high energy physics — from accelerating theoretical computations to discovering hidden patterns in experimental data. My goal is to bridge traditional phenomenology with AI-driven methods, building tools that can help uncover what the Standard Model leaves unanswered.
+                </p>
+            </section>
+
+            <section class="resume-section">
+                <h2 class="section-title">Education</h2>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Ph.D. in Particle Physics and Nuclear Physics</h3>
+                        <span class="item-period">2022 - Present</span>
+                    </div>
+                    <p class="item-subtitle">Central China Normal University, China</p>
+                </div>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">M.S. in Theoretical Physics</h3>
+                        <span class="item-period">2019 - 2022</span>
+                    </div>
+                    <p class="item-subtitle">Central China Normal University, China</p>
+                </div>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">B.S. in Physics</h3>
+                        <span class="item-period">2015 - 2019</span>
+                    </div>
+                    <p class="item-subtitle">Central China Normal University, China</p>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <h2 class="section-title">Publications</h2>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Linking anomalies to Hubble tension via a single right-handed neutrino</h3>
+                        <span class="item-period">2023</span>
+                    </div>
+                    <p class="item-subtitle">W.-F. Duan, S.-P. Li, X.-Q. Li, Y.-D. Yang</p>
+                    <div class="item-description">
+                        Chin. Phys. C <strong>47</strong> (2023) 3, 033102 · <a href="https://arxiv.org/abs/2111.05178" target="_blank" style="color: #4CAF50;">arXiv:2111.05178</a> · <a href="https://doi.org/10.1088/1674-1137/aca888" target="_blank" style="color: #4CAF50;">DOI</a>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">On sum rules for semi-leptonic b → c and b → u decays</h3>
+                        <span class="item-period">2025</span>
+                    </div>
+                    <p class="item-subtitle">W.-F. Duan, S. Iguro, X.-Q. Li, R. Watanabe, Y.-D. Yang</p>
+                    <div class="item-description">
+                        JHEP <strong>07</strong> (2025) 166 · <a href="https://arxiv.org/abs/2410.21384" target="_blank" style="color: #4CAF50;">arXiv:2410.21384</a> · <a href="https://doi.org/10.1007/JHEP07(2025)166" target="_blank" style="color: #4CAF50;">DOI</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="resume-section">
+                <h2 class="section-title">Skills</h2>
+                <div class="skills-grid">
+                    <span class="skill-tag">Mathematica</span>
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">Physics</span>
+                    <span class="skill-tag">Data Analysis</span>
+                </div>
+            </section>
         </main>
     </div>
     <script type="text/javascript">
-        // 使用与主页相同的 getBingImages 函数
         var time = 0, duration = 150,
         clean = function () { time = 0; },
         up = function (element) { setTimeout(function () { element.classList.add("up"); }, time); time += duration; },
