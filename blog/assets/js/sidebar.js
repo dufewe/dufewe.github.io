@@ -83,11 +83,13 @@
 
   var meta = document.getElementById("site-meta");
   if (meta && data.site) {
-    var text = "© " + new Date().getFullYear() + " " + (data.site.copyright || data.site.name);
-    if (data.site.since) {
-      var since = new Date(data.site.since + "T00:00:00").getTime();
-      var days = Math.floor((Date.now() - since) / 86400000);
-      if (!isNaN(days)) text += " · 已运行 " + Math.max(days, 0) + " 天";
+    var year = new Date().getFullYear();
+    var since = data.site.since ? new Date(data.site.since + "T00:00:00") : null;
+    var startYear = since && !isNaN(since.getTime()) ? since.getFullYear() : year;
+    var text = "© " + startYear + " - " + year;
+    if (since && !isNaN(since.getTime())) {
+      var days = Math.floor((Date.now() - since.getTime()) / 86400000);
+      if (!isNaN(days)) text += " · Running for " + Math.max(days, 0) + " days";
     }
     meta.textContent = text;
   }

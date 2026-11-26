@@ -72,15 +72,6 @@
     );
   });
   links.push(
-    '<a class="ghost-btn ghost-btn--primary" href="' + pdf + '" target="_blank" rel="noopener">Open PDF</a>'
-  );
-  links.push('<a class="ghost-btn" href="' + pdf + '" download>Download</a>');
-  if (post.source) {
-    links.push(
-      '<a class="ghost-btn" href="' + esc(post.source) + '" download>Source (.qd)</a>'
-    );
-  }
-  links.push(
     '<button class="ghost-btn" id="pdf-fullscreen" type="button">Full screen</button>'
   );
   document.getElementById("post-links").innerHTML = links.join("");

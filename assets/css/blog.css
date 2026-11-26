@@ -6,6 +6,7 @@
     --line: rgba(255, 255, 255, 0.1);
     --card: rgba(12, 17, 13, 0.52);
     --radius: 18px;
+    --page-w: 1320px;
 }
 
 * { box-sizing: border-box; }
@@ -71,7 +72,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(76, 175, 80, 0.7
 .blog-main { position: relative; z-index: 1; }
 .page {
     position: relative;
-    width: min(100% - 48px, 1180px);
+    width: min(100% - 48px, var(--page-w));
     margin: 0 auto;
     padding: 128px 0 96px;
 }
@@ -100,7 +101,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(76, 175, 80, 0.7
 .column-side {
     position: fixed;
     top: 128px;
-    right: max(24px, calc((100vw - 1180px) / 2));
+    right: max(24px, calc((100vw - var(--page-w)) / 2));
     width: 300px;
 }
 
@@ -112,7 +113,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(76, 175, 80, 0.7
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
-.widget + .widget { margin-top: 16px; }
+.widget + .widget { margin-top: 24px; }
 .widget-title, .panel-title {
     margin: 0 0 14px;
     color: #8ee294;
@@ -444,8 +445,6 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
     transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 .ghost-btn:hover { border-color: rgba(76, 175, 80, 0.6); background: rgba(76, 175, 80, 0.14); color: #fff; }
-.ghost-btn--primary { background: var(--accent); border-color: var(--accent); color: #08120a; font-weight: 600; }
-.ghost-btn--primary:hover { background: #5cbb60; border-color: #5cbb60; color: #08120a; }
 
 .pdf-shell {
     position: relative;
@@ -469,7 +468,7 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
     display: none;
     position: absolute;
     top: 14px;
-    right: 14px;
+    left: 14px;
     z-index: 2;
     width: 36px;
     height: 36px;
@@ -523,7 +522,7 @@ body.pdf-expanded { overflow: hidden; }
     .brand { top: 14px; right: 14px; padding: 5px 13px 5px 5px; }
     .brand__avatar { width: 30px; height: 30px; }
     .brand__name { font-size: 1.2em; }
-    .page { width: min(100% - 32px, 1180px); padding: 96px 0 64px; }
+    .page { width: min(100% - 32px, var(--page-w)); padding: 96px 0 64px; }
     .post-item { padding: 20px; }
     .item-title { font-size: 1.18em; }
     .panel { padding: 20px; }

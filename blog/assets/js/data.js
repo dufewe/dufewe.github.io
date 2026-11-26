@@ -10,7 +10,6 @@
       name: "Dufewe Fangu",
       title: "Blog",
       intro: "Notes on physics, tools, and whatever survives a second look.",
-      copyright: "星空漫步",
       since: "2026-11-18"
     },
 
@@ -19,19 +18,19 @@
         slug: "physics",
         name: "Physics",
         short: "Physics",
-        glyph: "理"
+        glyph: "P"
       },
       {
         slug: "notes",
         name: "Notes",
         short: "Notes",
-        glyph: "记"
+        glyph: "N"
       },
       {
         slug: "tools",
         name: "Tools",
         short: "Tools",
-        glyph: "器"
+        glyph: "T"
       }
     ],
 
