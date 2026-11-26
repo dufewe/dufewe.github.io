@@ -465,7 +465,7 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
 .doc-missing[hidden] { display: none; }
 .doc-missing p { margin: 0; }
 .doc-missing code { padding: 2px 7px; border-radius: 5px; background: rgba(255, 255, 255, 0.08); }
-.doc-close {
+.doc-close, .doc-theme {
     display: none;
     position: absolute;
     top: 14px;
@@ -481,8 +481,9 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
     line-height: 1;
     cursor: pointer;
 }
+.doc-theme { left: 60px; font-size: 16px; }
 .doc-shell.is-full { position: fixed; inset: 0; z-index: 2000; height: 100dvh; border: 0; border-radius: 0; background: #111; }
-.doc-shell.is-full .doc-close { display: block; }
+.doc-shell.is-full .doc-close, .doc-shell.is-full .doc-theme { display: grid; place-items: center; }
 body.doc-expanded { overflow: hidden; }
 body.doc-expanded .brand { display: none; }
 
