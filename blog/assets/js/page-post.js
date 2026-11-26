@@ -10,6 +10,7 @@
   var post = posts.find(function (item) {
     return item.id === id;
   });
+  if (!post && !id) post = posts[0];
 
   function esc(value) {
     return logic.escapeHtml(value);
@@ -71,15 +72,16 @@
         "</a>"
     );
   });
-  links.push(
-    '<button class="ghost-btn" id="doc-fullscreen" type="button">Full screen</button>'
-  );
-  document.getElementById("post-links").innerHTML = links.join("");
+  var linksHost = document.getElementById("post-links");
+  if (links.length) {
+    linksHost.innerHTML = links.join("");
+  } else {
+    linksHost.hidden = true;
+  }
 
   var shell = document.getElementById("doc-shell");
   var frame = document.getElementById("doc-frame");
   var missing = document.getElementById("doc-missing");
-  var fullscreenBtn = document.getElementById("doc-fullscreen");
   var closeBtn = document.getElementById("doc-close");
   var themeBtn = document.getElementById("doc-theme");
 
@@ -96,9 +98,12 @@
     "html.qd-dark .hljs-addition{color:#aff5b4}",
     "html.qd-dark .hljs-deletion{color:#ffa198}",
     "html.qd-dark .hljs-meta{color:#8b949e}",
-    ".doc-theme-toggle{position:fixed;top:14px;left:14px;z-index:2147483647;display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid rgba(0,0,0,.18);border-radius:50%;background:rgba(255,255,255,.88);color:#151a16;font:16px/1 sans-serif;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}",
-    "html.qd-dark .doc-theme-toggle{border-color:rgba(255,255,255,.25);background:rgba(12,17,13,.85);color:#e8efe9}",
-    "html.doc-fullscreen .doc-theme-toggle{display:none}"
+    ".doc-iframe-btn{position:fixed;top:14px;z-index:2147483647;display:grid;place-items:center;width:36px;height:36px;padding:0;border:1px solid rgba(0,0,0,.18);border-radius:50%;background:rgba(255,255,255,.88);color:#151a16;font:16px/1 sans-serif;cursor:pointer;box-shadow:0 2px 10px rgba(0,0,0,.15)}",
+    ".doc-fullscreen-toggle{left:14px;font-size:18px}",
+    ".doc-theme-toggle{left:60px}",
+    "html.qd-dark .doc-iframe-btn{border-color:rgba(255,255,255,.25);background:rgba(12,17,13,.85);color:#e8efe9}",
+    "html.doc-fullscreen .doc-iframe-btn{display:none}",
+    "@media (min-width:900px){html.doc-fullscreen body.quarkdown{--qd-content-width:66vw}}"
   ].join("");
   var dark = false;
   try {
@@ -146,10 +151,21 @@
     var style = doc.createElement("style");
     style.textContent = THEME_CSS;
     (doc.head || doc.documentElement).appendChild(style);
+    var fullBtn = doc.createElement("button");
+    fullBtn.type = "button";
+    fullBtn.className = "doc-iframe-btn doc-fullscreen-toggle";
+    fullBtn.textContent = "⤢";
+    fullBtn.setAttribute("aria-label", "Full screen");
+    fullBtn.addEventListener("click", function () {
+      try {
+        window.parent.toggleDocFullscreen();
+      } catch (e) {}
+    });
+    (doc.body || doc.documentElement).appendChild(fullBtn);
     var btn = doc.createElement("button");
     btn.type = "button";
     btn.id = "doc-theme-toggle";
-    btn.className = "doc-theme-toggle";
+    btn.className = "doc-iframe-btn doc-theme-toggle";
     btn.addEventListener("click", function () {
       setTheme(!dark);
     });
@@ -175,14 +191,13 @@
   function setFullscreen(on) {
     shell.classList.toggle("is-full", on);
     document.body.classList.toggle("doc-expanded", on);
-    fullscreenBtn.textContent = on ? "Exit full screen" : "Full screen";
     var doc = frameDoc();
     if (doc) doc.documentElement.classList.toggle("doc-fullscreen", on);
   }
 
-  fullscreenBtn.addEventListener("click", function () {
+  window.toggleDocFullscreen = function () {
     setFullscreen(!shell.classList.contains("is-full"));
-  });
+  };
   closeBtn.addEventListener("click", function () {
     setFullscreen(false);
   });

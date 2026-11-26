@@ -37,6 +37,16 @@
     // Every post is a Quarkdown document compiled to blog/posts/<id>/index.html.
     // Fields: id, title, date, category, tags, excerpt, source,
     //         authors (optional), venue (optional), links (optional), draft (optional)
-    posts: []
+    posts: [
+      {
+        id: "demo-post",
+        title: "Neutrino masses, a short demo",
+        date: "2026-11-18",
+        category: "physics",
+        tags: ["neutrino"],
+        excerpt: "A short demo of the rendered HTML post.",
+        source: "posts/demo.qd"
+      }
+    ]
   };
 });

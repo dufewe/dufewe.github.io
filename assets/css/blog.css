@@ -412,7 +412,7 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
 .timeline__cat { margin-left: auto; color: #b3bdb5; font-size: 0.78em; }
 
 /* post view */
-.article-head { margin-bottom: 8px; }
+.article-head { margin-bottom: 16px; }
 .article-title {
     margin: 6px 0 16px;
     color: var(--ink);
@@ -430,6 +430,7 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
 .post-venue { font-style: italic; }
 
 .post-links { display: flex; flex-wrap: wrap; gap: 10px; margin: 22px 0; }
+.post-links[hidden] { display: none; }
 .ghost-btn {
     display: inline-flex;
     align-items: center;
