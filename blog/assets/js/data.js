@@ -9,7 +9,9 @@
     site: {
       name: "Dufewe Fangu",
       title: "Blog",
-      intro: "Notes on physics, tools, and whatever survives a second look."
+      intro: "Notes on physics, tools, and whatever survives a second look.",
+      copyright: "星空漫步",
+      since: "2026-11-18"
     },
 
     categories: [

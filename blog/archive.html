@@ -20,35 +20,53 @@
 
     <main class="blog-main">
         <div class="page">
-            <a class="back-link" href="./">← Blog</a>
+            <div class="layout">
+                <div class="column-main">
+                    <a class="back-link" href="./">← Blog</a>
 
-            <header class="page-head">
-                <p class="eyebrow">Index</p>
-                <h1 class="page-title">Archive</h1>
-                <p class="page-intro">Everything written so far. Filter by category, jump through a tag, or read down the years.</p>
-            </header>
+                    <header class="page-head">
+                        <p class="eyebrow">Index</p>
+                        <h1 class="page-title">Archive</h1>
+                        <p class="page-intro">Everything written so far. Filter by category, jump through a tag, or read down the years.</p>
+                    </header>
 
-            <div class="toolbar">
-                <div class="filters" id="archive-filters" aria-label="Filter posts by category"></div>
-                <p class="filter-hint" id="archive-hint"></p>
+                    <div class="toolbar">
+                        <div class="filters" id="archive-filters" aria-label="Filter posts by category"></div>
+                        <p class="filter-hint" id="archive-hint"></p>
+                    </div>
+
+                    <div class="archive-list" id="archive-list">
+                        <p class="empty-state">No posts yet.</p>
+                    </div>
+                    <noscript>
+                        <p class="empty-state">This page needs JavaScript to list posts.</p>
+                    </noscript>
+
+                    <section class="panel">
+                        <h2 class="panel-title">Tags</h2>
+                        <div class="tag-cloud" id="tag-cloud"></div>
+                    </section>
+
+                    <section class="panel">
+                        <h2 class="panel-title">By year</h2>
+                        <div class="timeline" id="timeline"></div>
+                    </section>
+                </div>
+
+                <aside class="column-side">
+                    <section class="widget">
+                        <h2 class="widget-title">Calendar</h2>
+                        <div id="calendar"></div>
+                    </section>
+                    <section class="widget">
+                        <h2 class="widget-title">Site</h2>
+                        <div class="stats" id="site-stats"></div>
+                    </section>
+                    <div class="widget widget--meta">
+                        <p class="site-meta" id="site-meta"></p>
+                    </div>
+                </aside>
             </div>
-
-            <div class="archive-list" id="archive-list">
-                <p class="empty-state">No posts yet.</p>
-            </div>
-            <noscript>
-                <p class="empty-state">This page needs JavaScript to list posts.</p>
-            </noscript>
-
-            <section class="panel">
-                <h2 class="panel-title">Tags</h2>
-                <div class="tag-cloud" id="tag-cloud"></div>
-            </section>
-
-            <section class="panel">
-                <h2 class="panel-title">By year</h2>
-                <div class="timeline" id="timeline"></div>
-            </section>
         </div>
     </main>
 
@@ -58,5 +76,6 @@
     <script src="assets/js/logic.js"></script>
     <script src="assets/js/components.js"></script>
     <script src="assets/js/page-archive.js"></script>
+    <script src="assets/js/sidebar.js"></script>
 </body>
 </html>
