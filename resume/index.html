@@ -1,24 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dufewe's Resume">
-    <meta name="keywords" content="Dufewe, Resume, Particle Physics, HEP">
     <meta name="author" content="Dufewe">
     <title>Resume - Dufewe Fangu</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/css/onlinewebfonts.css"/>
-    <link rel="stylesheet" type="text/css" href="../assets/css/vno.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/iconfont_work/iconfont_work.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/iconfont_life/iconfont_life.css">
-    <link rel="stylesheet" type="text/css" href="../assets/css/iconfont_tools/iconfont_tools.css">
+    <link rel="stylesheet" href="../assets/css/vno.css">
+    <link rel="stylesheet" href="../assets/css/iconfont_work/iconfont_work.css">
+    <link rel="stylesheet" href="../assets/css/iconfont_life/iconfont_life.css">
+    <link rel="stylesheet" href="../assets/css/iconfont_tools/iconfont_tools.css">
     <link rel="apple-touch-icon" href="../homeicon.jpg">
     <link rel="icon" href="../favicon.ico">
-    <style type="text/css">
+    <style>
         html, body { height: 100%; margin: 0; }
         body { background: center center no-repeat #666; background-size: cover; position: relative; }
         body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.4); z-index: 1; }
@@ -57,16 +54,7 @@
         .item-description { color: #ccc; line-height: 1.8; margin-top: 12px; font-size: 0.95em; }
         .item-description ul { margin: 10px 0; padding-left: 20px; }
         .item-description li { margin: 8px 0; color: #bbb; }
-        .skills-grid { display: flex; flex-wrap: wrap; gap: 12px; }
         .skill-tag { background: rgba(76,175,80,0.2); color: #4CAF50; padding: 8px 16px; border-radius: 18px; font-size: 0.85em; border: 1px solid #4CAF50; }
-        .back-home { text-align: center; padding: 20px; margin-top: 40px; }
-        .back-home a { color: #eee; text-decoration: none; font-size: 0.95em; }
-        .back-home a:hover { color: #fff; }
-        .orcid-link { display: inline-flex; align-items: center; gap: 8px; color: #4CAF50; text-decoration: none; font-size: 0.95em; }
-        .orcid-link:hover { color: #81C784; }
-        .orcid-link svg { width: 18px; height: 18px; fill: currentColor; }
-        .research-interests { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
-        .interest-tag { background: rgba(255,255,255,0.08); color: #ddd; padding: 6px 14px; border-radius: 4px; font-size: 0.85em; border: 1px solid rgba(255,255,255,0.15); }
         @media (max-width: 900px) { 
             .resume-layout { flex-direction: column; overflow-y: auto; height: auto; }
             .resume-left { width: 100%; padding: 40px 20px; }
@@ -81,7 +69,7 @@
         <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
     </span>
     
-    <div class="resume-layout" style="position: relative; z-index: 5;">
+    <div class="resume-layout">
         <aside class="resume-left">
             <div class="ih-item circle effect right_to_left">
                 <a href="https://dufewe.github.io/resume/" title="" class="blog-button">
@@ -102,9 +90,9 @@
                 <div>
                     <nav class="cover-navigation cover-navigation--primary">
                         <ul class="navigation">
-                            <li class="navigation__item"><a href="https://dufewe.github.io/" class="blog-button">Home</a></li>
-                            <li class="navigation__item"><a href="https://dufewe.github.io/library" class="blog-button">Library</a></li>
-                            <li class="navigation__item"><a href="https://dufewe.github.io/flav-data" class="blog-button">FlavData</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/blog/" class="blog-button">Blog</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/library/" class="blog-button">Library</a></li>
+                            <li class="navigation__item"><a href="https://flav-data.streamlit.app" class="blog-button" target="_blank" rel="noopener">FlavData</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -114,14 +102,12 @@
                             <li class="navigation__item"><a href="https://github.com/dufewe" title="GitHub"><span class='social iconfont icon-Github'></span></a></li>
                             <li class="navigation__item"><a href="https://x.com/DufeweFangu" title="X"><span class='social iconfont icon-X'></span></a></li>
                             <li class="navigation__item"><a href="https://space.bilibili.com/415379727" title="Bilibili"><span class='social iconfont icon-Bilibili'></span></a></li>
-                            <!--<li class="navigation__item"><a href="https://www.zhihu.com/people/44-83-24-90" title="Zhihu"><span class='social iconfont icon-Zhihu'></span></a></li>-->
                             <li class="navigation__item"><a href="https://www.linkedin.com/in/dufewe/" title="LinkedIn"><span class='social iconfont icon-LinkedIn'></span></a></li>
                             <li class="navigation__item"><a href="https://steamcommunity.com/id/8613767405725/" title="Steam"><span class='social iconfont icon-Steam'></span></a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
-            <div class="back-home"><a href="https://dufewe.github.io/">← Back to Home</a></div>
         </aside>
         <main class="resume-right">
             <section class="resume-section">
@@ -163,22 +149,32 @@
                 <h2 class="section-title">Publications</h2>
                 <div class="resume-item">
                     <div class="item-header">
-                        <h3 class="item-title">Linking anomalies to Hubble tension via a single right-handed neutrino</h3>
-                        <span class="item-period">2023</span>
+                        <h3 class="item-title">Matching ν2HDM onto νSMEFT up to one-loop accuracy</h3>
+                        <span class="item-period">2026-11-02</span>
                     </div>
-                    <p class="item-subtitle">W.-F. Duan, S.-P. Li, X.-Q. Li, Y.-D. Yang</p>
+                    <p class="item-subtitle">W.-F. Duan, X.-Z. He, X.-Q. Li, Y.-D. Yang, X.-B. Yuan</p>
                     <div class="item-description">
-                        Chin. Phys. C <strong>47</strong> (2023) 3, 033102 · <a href="https://arxiv.org/abs/2111.05178" target="_blank" style="color: #4CAF50;">arXiv:2111.05178</a> · <a href="https://doi.org/10.1088/1674-1137/aca888" target="_blank" style="color: #4CAF50;">DOI</a>
+                        arXiv preprint · <a href="https://arxiv.org/abs/2611.02500" target="_blank" style="color: #4CAF50;">arXiv:2611.02500</a>
                     </div>
                 </div>
                 <div class="resume-item">
                     <div class="item-header">
                         <h3 class="item-title">On sum rules for semi-leptonic b → c and b → u decays</h3>
-                        <span class="item-period">2025</span>
+                        <span class="item-period">2024-10-28</span>
                     </div>
                     <p class="item-subtitle">W.-F. Duan, S. Iguro, X.-Q. Li, R. Watanabe, Y.-D. Yang</p>
                     <div class="item-description">
                         JHEP <strong>07</strong> (2025) 166 · <a href="https://arxiv.org/abs/2410.21384" target="_blank" style="color: #4CAF50;">arXiv:2410.21384</a> · <a href="https://doi.org/10.1007/JHEP07(2025)166" target="_blank" style="color: #4CAF50;">DOI</a>
+                    </div>
+                </div>
+                <div class="resume-item">
+                    <div class="item-header">
+                        <h3 class="item-title">Linking anomalies to Hubble tension via a single right-handed neutrino</h3>
+                        <span class="item-period">2021-11-09</span>
+                    </div>
+                    <p class="item-subtitle">W.-F. Duan, S.-P. Li, X.-Q. Li, Y.-D. Yang</p>
+                    <div class="item-description">
+                        Chin. Phys. C <strong>47</strong> (2023) 3, 033102 · <a href="https://arxiv.org/abs/2111.05178" target="_blank" style="color: #4CAF50;">arXiv:2111.05178</a> · <a href="https://doi.org/10.1088/1674-1137/aca888" target="_blank" style="color: #4CAF50;">DOI</a>
                     </div>
                 </div>
             </section>
@@ -194,26 +190,7 @@
             </section>
         </main>
     </div>
-    <script type="text/javascript">
-        var time = 0, duration = 150,
-        clean = function () { time = 0; },
-        up = function (element) { setTimeout(function () { element.classList.add("up"); }, time); time += duration; },
-        down = function (element) { element.classList.remove("up"); },
-        toggle = function (element) { setTimeout(function () { element.classList.toggle("up"); }, time); time += duration; };
-        
-        function getBingImages(imgUrls) {
-            var indexName = "bing-image-index";
-            var index = sessionStorage.getItem(indexName);
-            if (isNaN(index) || index == 7) index = 0;
-            else index++;
-            var imgUrl = imgUrls[index];
-            var url = "https://www.bing.com" + imgUrl;
-            document.body.style.background = "url('" + url + "') center center no-repeat #666";
-            document.body.style.backgroundSize = "cover";
-            sessionStorage.setItem(indexName, index);
-        }
-    </script>
-    <script type="text/javascript" src="../assets/json/images.json?cb=getBingImages"></script>
-    <script type="text/javascript" src="../assets/js/main.js"></script>
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/json/images.json?cb=getBingImages"></script>
 </body>
 </html>

@@ -8,46 +8,56 @@ This is my personal homepage, built on the **Vno** theme and hosted on [GitHub P
 
 ## 📄 Page Structure
 
-| Page | Path | Description |
-|------|------|-------------|
-| Home | `/` | Personal intro, social links, navigation hub |
-| Resume | `/resume/` | Academic profile, education, publications, skills |
+| Page | Path | Status |
+|------|------|--------|
+| Home | `/` | ✅ Live |
+| Resume | `/resume/` | ✅ Live (standalone) |
+| 404 | `/404.html` | ✅ Live |
+| Blog | `/blog/` | ✅ Live |
+| Library | `/library/` | 🚧 Planned |
+| FlavData | [flav-data.streamlit.app](https://flav-data.streamlit.app) | ✅ Live (external) |
 
 ## 🧭 Navigation Links
 
-- **Home** — Personal homepage
-- **Library** — Knowledge base (RAG document system, TBD)
-- **iCloud** — Personal NAS cloud service
-- **Resume** — Personal CV
+- **Home** — Landing page: personal intro, social links, and a Google search box
+- **Blog** — Post list and article pages: physics notes, tool notes, and reading notes
+- **Library** — Planned knowledge base; the link is reserved and will 404 until the page is built
+- **FlavData** — Flavour-physics data app hosted on [Streamlit](https://flav-data.streamlit.app), linked from Resume
+- **Resume** — Standalone intro page: education, publications, and skills; no links back to Home
 
 ## 🛠 Tech Stack
 
 - **Frontend**: Pure HTML / CSS / JavaScript, no framework dependencies
 - **Theme**: [Vno](https://github.com/OneNeko/hexo-theme-vno) — Clean personal homepage theme
-- **Fonts**: Great Vibes (handwritten titles), iconfont custom icon fonts
-- **Background**: Bing image background
+- **Fonts**: Great Vibes (handwritten titles), three custom iconfont sets (work, life, tools)
+- **Background**: Bing image, rotated per session via `assets/json/images.json`
 - **Deployment**: GitHub Pages
 
 ## 📂 Directory Structure
 
 ```
 ├── index.html                  # Home page
+├── blog/
+│   ├── index.html              # Post list
+│   └── posts/                  # Article pages
 ├── resume/
 │   └── index.html              # Resume page
 ├── 404.html                    # 404 error page
 ├── assets/
 │   ├── css/                    # Stylesheets
 │   │   ├── vno.css             # Theme main stylesheet
-│   │   ├── onlinewebfonts.css  # Online fonts
+│   │   ├── blog.css            # Blog layout and article typography
 │   │   ├── iconfont_work/      # Work-related icons
 │   │   ├── iconfont_life/      # Life-related icons
 │   │   └── iconfont_tools/     # Tool icons
-│   ├── fonts/                  # Local font files
-│   ├── img/                    # Image assets
-│   └── json/                   # Configuration files
+│   ├── img/
+│   │   └── portrait.jpg        # Profile photo
+│   ├── js/
+│   │   └── main.js             # Background rotation and mobile menu
+│   └── json/
 │       └── images.json         # Bing image list
 ├── favicon.ico                 # Site favicon
-└── homeicon.jpg                # Profile icon
+└── homeicon.jpg                # Apple touch icon
 ```
 
 ## 👤 About Me

@@ -1,0 +1,78 @@
+html, body { height: 100%; margin: 0; }
+body { background: center center no-repeat #666; background-size: cover; position: relative; }
+body::before { content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.4); z-index: 1; }
+.panel-cover__title { font-family: "Great Vibes", cursive; font-size: 2em; margin-top: 20px; }
+.panel-cover__subtitle { margin-top: 10px; font-size: 0.9em; }
+.panel-cover__description { margin-top: 15px; line-height: 1.6; font-size: 0.85em; }
+.blog-layout { display: flex; height: 100vh; position: relative; z-index: 5; }
+.blog-left {
+    width: 380px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    color: #eee;
+}
+.blog-right {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 60px 50px;
+    color: #eee;
+}
+.blog-left .ih-item.circle.effect { margin-bottom: 20px; }
+.blog-left .ih-item.circle.effect .img img { width: 140px; height: 140px; }
+.blog-left .panel-cover__title { text-align: center; }
+.blog-left .panel-cover__subtitle { text-align: center; }
+.blog-left .navigation-wrapper { margin-top: 25px; }
+.section-title { font-size: 1.4em; color: #fff; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; margin: 0 0 25px; }
+.blog-intro { color: #ccc; line-height: 1.8; font-size: 0.95em; max-width: 640px; margin: 0; }
+.post-list { max-width: 720px; margin-top: 35px; }
+.post-item {
+    display: block;
+    margin-bottom: 32px;
+    padding-left: 18px;
+    border-left: 3px solid rgba(76, 175, 80, 0.45);
+    text-decoration: none;
+    transition: border-color 0.3s ease;
+}
+.post-item:hover { border-left-color: #4CAF50; }
+.item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; }
+.item-title { font-size: 1.15em; color: #fff; font-weight: 500; margin: 0; transition: color 0.3s ease; }
+.post-item:hover .item-title { color: #4CAF50; }
+.item-period { color: #4CAF50; font-size: 0.85em; font-weight: 500; }
+.post-excerpt { color: #ccc; line-height: 1.8; font-size: 0.95em; margin: 10px 0 12px; }
+.post-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+.tag {
+    background: rgba(76, 175, 80, 0.2);
+    color: #4CAF50;
+    padding: 4px 12px;
+    border-radius: 14px;
+    font-size: 0.8em;
+    border: 1px solid rgba(76, 175, 80, 0.6);
+}
+.back-link { display: inline-block; color: #aaa; text-decoration: none; font-size: 0.9em; margin-bottom: 26px; }
+.back-link:hover { color: #fff; }
+.article-head { max-width: 720px; }
+.article-title { font-size: 1.6em; color: #fff; font-weight: 500; line-height: 1.4; margin: 0 0 10px; }
+.article-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; color: #4CAF50; font-size: 0.85em; }
+.prose { max-width: 720px; color: #ccc; line-height: 1.85; font-size: 0.97em; margin-top: 28px; }
+.prose p { margin: 14px 0; }
+.prose h2 { font-size: 1.15em; color: #fff; margin: 34px 0 12px; padding-bottom: 8px; border-bottom: 1px solid rgba(76, 175, 80, 0.35); }
+.prose ul, .prose ol { margin: 14px 0; padding-left: 22px; }
+.prose li { margin: 8px 0; }
+.prose blockquote { margin: 26px 0; padding: 12px 20px; border-left: 3px solid #4CAF50; background: rgba(255, 255, 255, 0.05); color: #ddd; }
+.prose blockquote p { margin: 0; }
+.prose a { color: #4CAF50; text-decoration: none; }
+.prose a:hover { text-decoration: underline; }
+.prose code { background: rgba(255, 255, 255, 0.08); padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+.prose pre { background: rgba(0, 0, 0, 0.35); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px; padding: 16px; overflow-x: auto; }
+.prose pre code { background: none; padding: 0; }
+.article-footer { max-width: 720px; margin-top: 40px; }
+@media (max-width: 900px) {
+    .blog-layout { flex-direction: column; overflow-y: auto; height: auto; }
+    .blog-left { width: 100%; padding: 40px 20px; }
+    .blog-right { padding: 40px 20px; overflow-y: visible; }
+    .item-header { flex-direction: column; gap: 5px; }
+}

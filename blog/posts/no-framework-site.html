@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Notes on keeping a personal site small: static HTML, a small stylesheet, and about twenty lines of JavaScript.">
+    <meta name="author" content="Dufewe">
+    <title>This site has no framework - Dufewe Fangu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/vno.css">
+    <link rel="stylesheet" href="../../assets/css/iconfont_work/iconfont_work.css">
+    <link rel="stylesheet" href="../../assets/css/iconfont_life/iconfont_life.css">
+    <link rel="stylesheet" href="../../assets/css/iconfont_tools/iconfont_tools.css">
+    <link rel="stylesheet" href="../../assets/css/blog.css">
+    <link rel="apple-touch-icon" href="../../homeicon.jpg">
+    <link rel="icon" href="../../favicon.ico">
+</head>
+<body>
+    <span class="mobile btn-mobile-menu">
+        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
+        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
+    </span>
+
+    <div class="blog-layout">
+        <aside class="blog-left">
+            <div class="ih-item circle effect right_to_left">
+                <a href="https://dufewe.github.io/" class="blog-button">
+                    <div class="img"><img src="../../assets/img/portrait.jpg" alt="img" class="js-avatar profilepic"></div>
+                    <div class="info">
+                        <div class="info-back">
+                            <h2>Loving</h2>
+                            <p>2026</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <h1 class="panel-cover__title panel-title">Dufewe Fangu</h1>
+            <p class="panel-cover__subtitle panel-subtitle">Physics Learner | AI Amateur</p>
+            <hr class="panel-cover__divider" />
+            <p class="panel-cover__description">Ph.D. candidate in Particle Physics at Central China Normal University</p>
+            <div class="navigation-wrapper">
+                <div>
+                    <nav class="cover-navigation cover-navigation--primary">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://dufewe.github.io/" class="blog-button">Home</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/library/" class="blog-button">Library</a></li>
+                            <li class="navigation__item"><a href="https://dufewe.github.io/resume/" class="blog-button">Resume</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="">
+                    <nav class="cover-navigation navigation--social">
+                        <ul class="navigation">
+                            <li class="navigation__item"><a href="https://github.com/dufewe" title="GitHub"><span class='social iconfont icon-Github'></span></a></li>
+                            <li class="navigation__item"><a href="https://x.com/DufeweFangu" title="X"><span class='social iconfont icon-X'></span></a></li>
+                            <li class="navigation__item"><a href="https://space.bilibili.com/415379727" title="Bilibili"><span class='social iconfont icon-Bilibili'></span></a></li>
+                            <li class="navigation__item"><a href="https://www.linkedin.com/in/dufewe/" title="LinkedIn"><span class='social iconfont icon-LinkedIn'></span></a></li>
+                            <li class="navigation__item"><a href="https://steamcommunity.com/id/8613767405725/" title="Steam"><span class='social iconfont icon-Steam'></span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </aside>
+        <main class="blog-right">
+            <a class="back-link" href="../">← All posts</a>
+            <article>
+                <div class="article-head">
+                    <h1 class="article-title">This site has no framework</h1>
+                    <div class="article-meta">
+                        <time datetime="2026-11-12">2026-11-12</time>
+                        <span class="tag">Web</span>
+                        <span class="tag">Tools</span>
+                    </div>
+                </div>
+                <div class="prose">
+                    <p>A personal site does not need a build pipeline. This one is a handful of static pages, a theme stylesheet, three icon fonts, and one small script. GitHub Pages serves it directly, which means there is nothing between saving a file and seeing it online.</p>
+                    <h2>The whole stack</h2>
+                    <ul>
+                        <li>HTML for the pages, with the cover layout borrowed from the Vno theme;</li>
+                        <li>CSS for the dark overlay, the green accents, and the two-column resume/blog layout;</li>
+                        <li>About twenty lines of JavaScript: rotate the background once per session, toggle the mobile menu;</li>
+                        <li>A JSON file listing the background images.</li>
+                    </ul>
+                    <p>The background logic is the only stateful part, and it is short enough to paste here:</p>
+                    <pre><code>var index = (isNaN(stored) ? 0 : stored + 1) % imgUrls.length;
+target.style.background = "url('https://www.bing.com" + imgUrls[index] + "') center center no-repeat #666";</code></pre>
+                    <h2>What I removed</h2>
+                    <p>An old audit turned up the usual archaeology: a webfont loaded but never used, a duplicated background script on the resume page, an unused script block with timer helpers nobody called, and images that were several times larger than they displayed. Compression alone took the image payload from about 1.4 MB to roughly 130 KB.</p>
+                    <p>The 404 page now uses root-absolute asset paths, so a wrong URL at any depth still gets the correct styles instead of a naked page.</p>
+                    <h2>What it costs</h2>
+                    <p>Almost nothing. There is no dependency to upgrade and no configuration to debug. Adding a post means copying one HTML file and editing it; adding a page means the same. When the site outgrows that, it will be a good problem and a deliberate decision — not a default.</p>
+                </div>
+            </article>
+            <div class="article-footer">
+                <a class="back-link" href="../">← All posts</a>
+            </div>
+        </main>
+    </div>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../assets/json/images.json?cb=getBingImages"></script>
+</body>
+</html>
