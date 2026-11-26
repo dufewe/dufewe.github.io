@@ -8,85 +8,43 @@
     <title>Blog - Dufewe Fangu</title>
     <link rel="stylesheet" href="../assets/css/vno.css">
     <link rel="stylesheet" href="../assets/css/fonts.css">
-    <link rel="stylesheet" href="../assets/css/iconfont_work/iconfont_work.css">
-    <link rel="stylesheet" href="../assets/css/iconfont_life/iconfont_life.css">
-    <link rel="stylesheet" href="../assets/css/iconfont_tools/iconfont_tools.css">
     <link rel="stylesheet" href="../assets/css/blog.css">
     <link rel="apple-touch-icon" href="../homeicon.jpg">
     <link rel="icon" href="../favicon.ico">
 </head>
 <body>
-    <span class="mobile btn-mobile-menu">
-        <i class="social iconfont icon-list btn-mobile-menu__icon"></i>
-        <i class="social iconfont icon-angleup btn-mobile-close__icon hidden"></i>
-    </span>
+    <a class="brand" href="https://dufewe.github.io/" title="Dufewe Fangu">
+        <img class="brand__avatar" src="../assets/img/portrait.jpg" alt="Dufewe Fangu">
+        <span class="brand__name">Dufewe Fangu</span>
+    </a>
 
-    <div class="blog-layout">
-        <aside class="blog-left">
-            <div class="ih-item circle effect right_to_left">
-                <a href="https://dufewe.github.io/" class="blog-button">
-                    <div class="img"><img src="../assets/img/portrait.jpg" alt="img" class="js-avatar profilepic"></div>
-                    <div class="info">
-                        <div class="info-back">
-                            <h2>Loving</h2>
-                            <p>2026</p>
-                        </div>
-                    </div>
-                </a>
+    <main class="blog-main">
+        <div class="page">
+            <header class="page-head">
+                <p class="eyebrow">Writing</p>
+                <h1 class="page-title">Blog</h1>
+                <p class="page-intro">Notes on physics, tools, and whatever survives a second look.</p>
+            </header>
+
+            <div class="toolbar">
+                <div class="filters" id="post-filters" aria-label="Filter posts by category"></div>
+                <a class="text-link" href="archive.html">Archive →</a>
             </div>
-            <h1 class="panel-cover__title panel-title">Dufewe Fangu</h1>
-            <p class="panel-cover__subtitle panel-subtitle">Physics Learner | AI Amateur</p>
-            <hr class="panel-cover__divider" />
-            <p class="panel-cover__description">Ph.D. candidate in Particle Physics at Central China Normal University</p>
-            <div class="navigation-wrapper">
-                <div>
-                    <nav class="cover-navigation cover-navigation--primary">
-                        <ul class="navigation">
-                            <li class="navigation__item"><a href="https://dufewe.github.io/" class="blog-button">Home</a></li>
-                            <li class="navigation__item"><a href="https://dufewe.github.io/library/" class="blog-button">Library</a></li>
-                            <li class="navigation__item"><a href="https://dufewe.github.io/resume/" class="blog-button">Resume</a></li>
-                        </ul>
-                    </nav>
-                </div>
-                <div class="">
-                    <nav class="cover-navigation navigation--social">
-                        <ul class="navigation">
-                            <li class="navigation__item"><a href="https://github.com/dufewe" title="GitHub"><span class='social iconfont icon-Github'></span></a></li>
-                            <li class="navigation__item"><a href="https://x.com/DufeweFangu" title="X"><span class='social iconfont icon-X'></span></a></li>
-                            <li class="navigation__item"><a href="https://space.bilibili.com/415379727" title="Bilibili"><span class='social iconfont icon-Bilibili'></span></a></li>
-                            <li class="navigation__item"><a href="https://www.linkedin.com/in/dufewe/" title="LinkedIn"><span class='social iconfont icon-LinkedIn'></span></a></li>
-                            <li class="navigation__item"><a href="https://steamcommunity.com/id/8613767405725/" title="Steam"><span class='social iconfont icon-Steam'></span></a></li>
-                        </ul>
-                    </nav>
-                </div>
+
+            <div class="post-list" id="post-list">
+                <p class="empty-state">No posts yet.</p>
             </div>
-        </aside>
-        <main class="blog-right">
-            <section>
-                <h1 class="section-title">Blog</h1>
-                <p class="blog-intro">Notes on physics, tools, and whatever survives a second look.</p>
-                <div class="post-list">
-                    <a class="post-item" href="posts/hello-blog.html">
-                        <div class="item-header">
-                            <h2 class="item-title">Hello, Blog</h2>
-                            <span class="item-period">2026-11-26</span>
-                        </div>
-                        <p class="post-excerpt">A first post: why this corner exists, what I plan to put here, and what I hope it becomes.</p>
-                        <div class="post-tags"><span class="tag">Site</span></div>
-                    </a>
-                    <a class="post-item" href="posts/no-framework-site.html">
-                        <div class="item-header">
-                            <h2 class="item-title">This site has no framework</h2>
-                            <span class="item-period">2026-11-12</span>
-                        </div>
-                        <p class="post-excerpt">A handful of static pages, one stylesheet per role, and about twenty lines of JavaScript. Notes on keeping a personal site deliberately small.</p>
-                        <div class="post-tags"><span class="tag">Web</span><span class="tag">Tools</span></div>
-                    </a>
-                </div>
-            </section>
-        </main>
-    </div>
+            <noscript>
+                <p class="empty-state">This page needs JavaScript to list posts.</p>
+            </noscript>
+        </div>
+    </main>
+
     <script src="../assets/js/main.js"></script>
     <script src="../assets/json/images.json?cb=getBingImages"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/logic.js"></script>
+    <script src="assets/js/components.js"></script>
+    <script src="assets/js/page-index.js"></script>
 </body>
 </html>

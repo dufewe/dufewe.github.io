@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A post by Dufewe Fangu.">
+    <meta name="author" content="Dufewe">
+    <title>Post - Dufewe Fangu</title>
+    <link rel="stylesheet" href="../assets/css/vno.css">
+    <link rel="stylesheet" href="../assets/css/fonts.css">
+    <link rel="stylesheet" href="../assets/css/blog.css">
+    <link rel="apple-touch-icon" href="../homeicon.jpg">
+    <link rel="icon" href="../favicon.ico">
+</head>
+<body>
+    <a class="brand" href="https://dufewe.github.io/" title="Dufewe Fangu">
+        <img class="brand__avatar" src="../assets/img/portrait.jpg" alt="Dufewe Fangu">
+        <span class="brand__name">Dufewe Fangu</span>
+    </a>
+
+    <main class="blog-main">
+        <div class="page">
+            <div id="post-root">
+                <a class="back-link" href="./">← All posts</a>
+
+                <article class="post-view">
+                    <header class="article-head">
+                        <h1 class="article-title" id="post-title">Loading…</h1>
+                        <div class="article-meta" id="post-meta"></div>
+                    </header>
+
+                    <div class="post-links" id="post-links"></div>
+
+                    <div class="pdf-shell" id="pdf-shell">
+                        <iframe class="pdf-frame" id="pdf-frame" title="Post PDF"></iframe>
+                        <div class="pdf-missing" id="pdf-missing" hidden>
+                            <p>The PDF for this post has not been built yet.</p>
+                            <p>Run <code>bash blog/scripts/build-posts.sh</code> and reload.</p>
+                        </div>
+                        <button class="pdf-close" id="pdf-close" type="button" aria-label="Exit full screen">×</button>
+                    </div>
+                </article>
+
+                <nav class="post-nav" id="post-nav" aria-label="Newer and older posts"></nav>
+
+                <noscript>
+                    <p class="empty-state">This page needs JavaScript to show the post.</p>
+                </noscript>
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/json/images.json?cb=getBingImages"></script>
+    <script src="assets/js/data.js"></script>
+    <script src="assets/js/logic.js"></script>
+    <script src="assets/js/page-post.js"></script>
+</body>
+</html>

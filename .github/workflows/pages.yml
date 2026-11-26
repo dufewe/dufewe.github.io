@@ -1,0 +1,63 @@
+name: Deploy site with Quarkdown posts
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install CJK fonts
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fonts-noto-cjk
+
+      - name: Install Quarkdown 2.7.0
+        run: |
+          curl -fsSL -o "$RUNNER_TEMP/quarkdown.zip" \
+            https://github.com/iamgio/quarkdown/releases/download/v2.7.0/quarkdown-linux-x64.zip
+          echo "5ff4e78e391abd073e62030da816faef265d681d3b8ccfd05768cc9c586f7e85  $RUNNER_TEMP/quarkdown.zip" | sha256sum -c -
+          unzip -q "$RUNNER_TEMP/quarkdown.zip" -d "$RUNNER_TEMP/quarkdown"
+          echo "$RUNNER_TEMP/quarkdown/bin" >> "$GITHUB_PATH"
+          chrome="$(find "$RUNNER_TEMP/quarkdown/chrome-headless-shell" -type f -name chrome-headless-shell | head -n 1)"
+          if [ -z "$chrome" ]; then
+            echo "chrome-headless-shell not found in the Quarkdown archive" >&2
+            exit 1
+          fi
+          echo "QD_CHROME_PATH=$chrome" >> "$GITHUB_ENV"
+
+      - name: Build posts
+        run: bash blog/scripts/build-posts.sh
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
