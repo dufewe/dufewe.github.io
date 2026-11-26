@@ -26,7 +26,7 @@ jobs:
           curl -fsSL -o "$RUNNER_TEMP/quarkdown.zip" \
             https://github.com/iamgio/quarkdown/releases/download/v2.7.0/quarkdown-linux-x64.zip
           echo "5ff4e78e391abd073e62030da816faef265d681d3b8ccfd05768cc9c586f7e85  $RUNNER_TEMP/quarkdown.zip" | sha256sum -c -
-          unzip -q "$RUNNER_TEMP/quarkdown.zip" -d "$RUNNER_TEMP/quarkdown"
+          unzip -q "$RUNNER_TEMP/quarkdown.zip" -d "$RUNNER_TEMP"
           echo "$RUNNER_TEMP/quarkdown/bin" >> "$GITHUB_PATH"
 
       - name: Build posts
