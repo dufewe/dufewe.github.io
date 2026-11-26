@@ -83,8 +83,8 @@
     return "post.html?id=" + encodeURIComponent(id);
   }
 
-  function pdfUrl(id) {
-    return "posts/" + encodeURIComponent(id) + ".pdf";
+  function docUrl(id) {
+    return "posts/" + encodeURIComponent(id) + "/index.html";
   }
 
   function escapeHtml(value) {
@@ -105,7 +105,7 @@
     groupByYear: groupByYear,
     prevNext: prevNext,
     postUrl: postUrl,
-    pdfUrl: pdfUrl,
+    docUrl: docUrl,
     escapeHtml: escapeHtml
   };
 });

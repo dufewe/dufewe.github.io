@@ -25,7 +25,7 @@
   }
 
   var category = logic.categoryOf(data.categories, post.category);
-  var pdf = logic.pdfUrl(post.id);
+  var doc = logic.docUrl(post.id);
 
   document.title = post.title + " - Dufewe Fangu";
   var description = document.querySelector('meta[name="description"]');
@@ -72,20 +72,21 @@
     );
   });
   links.push(
-    '<button class="ghost-btn" id="pdf-fullscreen" type="button">Full screen</button>'
+    '<button class="ghost-btn" id="doc-fullscreen" type="button">Full screen</button>'
   );
   document.getElementById("post-links").innerHTML = links.join("");
 
-  var shell = document.getElementById("pdf-shell");
-  var frame = document.getElementById("pdf-frame");
-  var missing = document.getElementById("pdf-missing");
-  var fullscreenBtn = document.getElementById("pdf-fullscreen");
-  var closeBtn = document.getElementById("pdf-close");
-  frame.title = post.title + " (PDF)";
-  frame.src = pdf + "#view=FitH&navpanes=0";
+  var shell = document.getElementById("doc-shell");
+  var frame = document.getElementById("doc-frame");
+  var missing = document.getElementById("doc-missing");
+  var fullscreenBtn = document.getElementById("doc-fullscreen");
+  var closeBtn = document.getElementById("doc-close");
+
+  frame.title = post.title;
+  frame.src = doc;
 
   if (window.location.protocol === "http:" || window.location.protocol === "https:") {
-    fetch(pdf, { method: "HEAD" })
+    fetch(doc, { method: "HEAD" })
       .then(function (response) {
         if (!response.ok) {
           frame.hidden = true;
@@ -97,7 +98,7 @@
 
   function setFullscreen(on) {
     shell.classList.toggle("is-full", on);
-    document.body.classList.toggle("pdf-expanded", on);
+    document.body.classList.toggle("doc-expanded", on);
     fullscreenBtn.textContent = on ? "Exit full screen" : "Full screen";
   }
 

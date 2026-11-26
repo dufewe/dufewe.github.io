@@ -20,12 +20,8 @@ for (const post of data.posts || []) {
   console.log(post.id + "\t" + post.source);
 }
 ' | while IFS=$'\t' read -r id source; do
-    echo "==> $source -> posts/$id.pdf"
-    flags=(--pdf --out-name "$id" --strict)
-    if [ "${CI:-}" = "true" ]; then
-        flags+=(--pdf-no-sandbox)
-    fi
-    quarkdown compile "$source" -o posts "${flags[@]}"
+    echo "==> $source -> posts/$id/index.html"
+    quarkdown compile "$source" -o posts --out-name "$id" --strict
 done
 
 echo "Posts built into blog/posts/."

@@ -34,7 +34,7 @@
       }
     ],
 
-    // Every post is a Quarkdown document compiled to blog/posts/<id>.pdf.
+    // Every post is a Quarkdown document compiled to blog/posts/<id>/index.html.
     // Fields: id, title, date, category, tags, excerpt, source,
     //         authors (optional), venue (optional), links (optional), draft (optional)
     posts: []

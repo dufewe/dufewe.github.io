@@ -100,9 +100,10 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(76, 175, 80, 0.7
 .column-main { min-width: 0; }
 .column-side {
     position: fixed;
-    top: 128px;
+    top: 50%;
     right: max(24px, calc((100vw - var(--page-w)) / 2));
     width: 300px;
+    transform: translateY(-50%);
 }
 
 .widget {
@@ -113,7 +114,7 @@ a:focus-visible, button:focus-visible { outline: 2px solid rgba(76, 175, 80, 0.7
     -webkit-backdrop-filter: blur(14px);
     backdrop-filter: blur(14px);
 }
-.widget + .widget { margin-top: 24px; }
+.widget + .widget { margin-top: 32px; }
 .widget-title, .panel-title {
     margin: 0 0 14px;
     color: #8ee294;
@@ -446,7 +447,7 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
 }
 .ghost-btn:hover { border-color: rgba(76, 175, 80, 0.6); background: rgba(76, 175, 80, 0.14); color: #fff; }
 
-.pdf-shell {
+.doc-shell {
     position: relative;
     width: 100%;
     height: min(78vh, 880px);
@@ -458,13 +459,13 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
     backdrop-filter: blur(10px);
     overflow: hidden;
 }
-.pdf-frame { display: block; width: 100%; height: 100%; border: 0; background: #0b0e0c; }
-.pdf-frame[hidden] { display: none; }
-.pdf-missing { position: absolute; inset: 0; display: grid; place-content: center; gap: 8px; padding: 24px; background: rgba(0, 0, 0, 0.35); color: var(--muted); text-align: center; }
-.pdf-missing[hidden] { display: none; }
-.pdf-missing p { margin: 0; }
-.pdf-missing code { padding: 2px 7px; border-radius: 5px; background: rgba(255, 255, 255, 0.08); }
-.pdf-close {
+.doc-frame { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+.doc-frame[hidden] { display: none; }
+.doc-missing { position: absolute; inset: 0; display: grid; place-content: center; gap: 8px; padding: 24px; background: rgba(0, 0, 0, 0.35); color: var(--muted); text-align: center; }
+.doc-missing[hidden] { display: none; }
+.doc-missing p { margin: 0; }
+.doc-missing code { padding: 2px 7px; border-radius: 5px; background: rgba(255, 255, 255, 0.08); }
+.doc-close {
     display: none;
     position: absolute;
     top: 14px;
@@ -480,9 +481,10 @@ a.tag:hover { background: rgba(30, 58, 36, 0.65); border-color: rgba(126, 203, 1
     line-height: 1;
     cursor: pointer;
 }
-.pdf-shell.is-full { position: fixed; inset: 0; z-index: 2000; height: 100dvh; border: 0; border-radius: 0; background: #111; }
-.pdf-shell.is-full .pdf-close { display: block; }
-body.pdf-expanded { overflow: hidden; }
+.doc-shell.is-full { position: fixed; inset: 0; z-index: 2000; height: 100dvh; border: 0; border-radius: 0; background: #111; }
+.doc-shell.is-full .doc-close { display: block; }
+body.doc-expanded { overflow: hidden; }
+body.doc-expanded .brand { display: none; }
 
 .post-nav { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; margin-top: 28px; }
 .post-nav[hidden] { display: none; }
@@ -509,9 +511,8 @@ body.pdf-expanded { overflow: hidden; }
 }
 
 @media (max-height: 800px) and (min-width: 981px) {
-    .column-side { top: 104px; }
     .widget { padding: 16px 18px; }
-    .widget + .widget { margin-top: 12px; }
+    .widget + .widget { margin-top: 20px; }
     .calendar__head { margin-bottom: 8px; }
     .calendar__grid { gap: 3px; }
     .calendar__day { height: 26px; }
@@ -531,5 +532,5 @@ body.pdf-expanded { overflow: hidden; }
     .archive-thumb { width: 40px; height: 40px; border-radius: 12px; font-size: 1.15em; }
     .post-nav { grid-template-columns: 1fr; }
     .post-nav__item--older { align-items: flex-start; text-align: left; }
-    .pdf-shell { height: 68vh; min-height: 380px; }
+    .doc-shell { height: 68vh; min-height: 380px; }
 }
