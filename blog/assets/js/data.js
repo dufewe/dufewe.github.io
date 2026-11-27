@@ -21,16 +21,16 @@
         glyph: "P"
       },
       {
-        slug: "notes",
-        name: "Notes",
-        short: "Notes",
-        glyph: "N"
+        slug: "ai",
+        name: "AI",
+        short: "AI",
+        glyph: "A"
       },
       {
-        slug: "tools",
-        name: "Tools",
-        short: "Tools",
-        glyph: "T"
+        slug: "life",
+        name: "Life",
+        short: "Life",
+        glyph: "L"
       }
     ],
 
@@ -43,7 +43,7 @@
         title: "自然与自然性",
         date: "2026-11-27",
         category: "physics",
-        tags: ["naturalness", "hierarchy"],
+        tags: ["naturalness", "hierarchy", "NOTE"],
         excerpt: "自然性问题及其解释方案的简要回顾。",
         source: "posts/自然与自然性/自然与自然性.qd"
       }
