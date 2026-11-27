@@ -39,13 +39,13 @@
     //         authors (optional), venue (optional), links (optional), draft (optional)
     posts: [
       {
-        id: "demo-post",
-        title: "Neutrino masses, a short demo",
-        date: "2026-11-18",
+        id: "naturalness",
+        title: "自然与自然性",
+        date: "2026-11-27",
         category: "physics",
-        tags: ["neutrino"],
-        excerpt: "A short demo of the rendered HTML post.",
-        source: "posts/demo.qd"
+        tags: ["naturalness", "hierarchy"],
+        excerpt: "自然性问题及其解释方案的简要回顾。",
+        source: "posts/自然与自然性/自然与自然性.qd"
       }
     ]
   };

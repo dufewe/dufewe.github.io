@@ -87,7 +87,9 @@
 
   var THEME_KEY = "blog-doc-theme";
   var THEME_CSS = [
-    "html.qd-dark{--qd-color-scheme:dark;--qd-background-color:#0f1411;--qd-main-color:#dfe7e0;--qd-link-color:#7fd48a;--qd-primary-color:#2a312b;--qd-nested-navigation-line-color:rgba(255,255,255,.18);--qd-docs-header-background-color:#151b16;--qd-docs-separator-border-color:#232b25;--qd-docs-search-border-color:#39423b}",
+    "html.qd-dark:root{color-scheme:dark;--qd-color-scheme:dark;--qd-background-color:#0f1411;--qd-main-color:#dfe7e0;--qd-link-color:#7fd48a;--qd-primary-color:#2a312b;--qd-nested-navigation-line-color:rgba(255,255,255,.18);--qd-docs-header-background-color:#151b16;--qd-docs-separator-border-color:#232b25;--qd-docs-search-border-color:#39423b}",
+    "html.qd-dark body.quarkdown-paged{background-color:#1c201d}",
+    "html.qd-dark body.quarkdown-paged .pagedjs_page{box-shadow:0 16px 48px rgba(0,0,0,.5)}",
     "html.qd-dark .quarkdown blockquote{border-color:rgba(255,255,255,.2)}",
     "html.qd-dark .hljs{background:#0d1117;color:#c9d1d9}",
     "html.qd-dark .hljs-comment,html.qd-dark .hljs-quote{color:#8b949e}",
