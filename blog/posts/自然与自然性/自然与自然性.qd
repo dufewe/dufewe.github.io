@@ -1,6 +1,5 @@
 .docname {自然与自然性}
 .doclang {zh}
-.doctype {paged}
 .nonumbering
 
 .css
@@ -116,10 +115,10 @@ $$$
 其中， $ m_H^{(0)2} $ 是裸的Higgs质量，其数值与 $ \Delta m^2_H $ 一样处于 $ \mathcal{O}(10^{38}) {\rm GeV}^2 $ 量级。从上式可知， $ \mathcal{O}(10^{5}) {\rm GeV}^2 $ 量级电弱标度的 $ m_H^2 $ 由两个Planck标度大数值的差值得到，这是该不自然性被叫做“层级问题”的原因。
 
 .row alignment:{center} gap:{0.2cm}
-    !(25%)[Higgs_top-loop](figures/Higgs_top-loop.png)
-    !(25%)[Higgs_Higgs-loop](figures/Higgs_Higgs-loop.png)
-    !(25%)[Higgs_Gauge-loop](figures/Higgs_Gauge-loop.png)
-    !(25%)[Higgs_Gauge-Goldstone-loop](figures/Higgs_Gauge-Goldstone-loop.png)
+    !(23%)[Higgs_top-loop](figures/Higgs_top-loop.png)
+    !(23%)[Higgs_Higgs-loop](figures/Higgs_Higgs-loop.png)
+    !(23%)[Higgs_Gauge-loop](figures/Higgs_Gauge-loop.png)
+    !(23%)[Higgs_Gauge-Goldstone-loop](figures/Higgs_Gauge-Goldstone-loop.png)
 
 **图 1**　标准模型费曼规范下Higgs质量辐射修正的单圈图，其中， $ G^\pm $ 和 $ G^0 $ 分别是带电和中性Goldstone玻色子。
 
