@@ -46,6 +46,15 @@
         tags: ["naturalness", "hierarchy", "NOTE"],
         excerpt: "自然性问题及其解释方案的简要回顾。",
         source: "posts/自然与自然性/自然与自然性.qd"
+      },
+      {
+        id: "helicity-amplitude",
+        title: "Chiral-Weyl-Helicity-Amplitude",
+        date: "2026-11-28",
+        category: "physics",
+        tags: ["helicity", "amplitude", "NOTE"],
+        excerpt: "Helicity amplitudes in a nutshell: phase-space decomposition, particle representations, and worked differential decay rates.",
+        source: "posts/Chiral-Weyl-Helicity-Amplitude/Chiral-Weyl-Helicity-Amplitude.qd"
       }
     ]
   };

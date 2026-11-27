@@ -1,0 +1,440 @@
+.docname {Chiral-Weyl-Helicity-Amplitude}
+.doclang {en}
+.nonumbering
+
+.css
+    .katex-display { font-size: 0.88em; }
+    table { font-size: 70%; }
+    h1 { font-size: 2.2em; }
+
+# Chiral-Weyl-Helicity-Amplitude
+
+> Contrary to traditional trace technology in calculating the differential observables, the helicity amplitude (HA) scenario aims to provide one interesting and simple perspective to analyse the physical properties of these observables. In the following, we will introduce briefly the main points of how to implement the computations via HA approach and then provide three examples (i.e. two mesonic $ B\to P(V) $ and one baryonic $ \Lambda_b \to H $ processes) with analytic expressions of differential decay rates.
+
+## Helicity Formalism in Quantum Field Theory
+
+In the current section, we introduce the necessary pieces in helicity amplitude calculations, including the phase-space decomposition technique and particle representation method.
+
+### Phase-space Decomposition
+
+As shown in quantum field theory, we usually meet with some $ n $ -body phase-space integrals when dealing with one mother particle decaying to several daughter particles, and the universal expression of $ 1\to n $ decay is often written as
+
+$$$
+\begin{aligned}
+d\Phi_n \left(P; p_1,\cdots, p_n\right) \equiv \delta^{(4)} \left(P-\sum_{i=1}^n p_i\right) \prod_{i=1}^n \frac{d^3\vec{p}_i}{\left(2\pi\right)^3} \frac{1}{2E_i},
+\end{aligned}
+\tag{1}
+$$$
+
+where $ P $ and $ p_i $ are the mother and daughter particle momenta, respectively. When inserting the following formula
+
+$$$
+\begin{aligned}
+\int\frac{d^3\vec{q}}{\left(2\pi\right)^3} \frac{1}{2E_{\vec{q}}} = \int \frac{d^4q}{\left(2\pi\right)^4}\left(2\pi\right) \delta\left(q^2 - m_q^2\right) \big|_{q^0>0}
+\end{aligned}
+\tag{2}
+$$$
+
+into the above one, we divide the $ n $ -body phase-space integral into one $ j $ -body and one $ n-j+1 $ -body integrals with another integration variable $ dq^2 $ , i.e., Eq. (1) can be changed into the form below
+
+$$$
+\begin{aligned}
+d\Phi_n \left(P; p_1,\cdots,p_n\right) = \left(2\pi\right)^3 dq^2 d\Phi_j \left(q; p_1,\cdots, p_j\right) d\Phi_{n-j+1} \left(P; q, p_{j+1}, \cdots, p_n\right).
+\end{aligned}
+\tag{3}
+$$$
+
+From Eq. (3), we can see that one Lorentz-invariant quantity which can only be dealt with in one reference frame is decomposed into two Lorentz-invariant phase-space integrals, these two integrals can be addressed in two different frames. Thus, in this way we can compute the $ 1\to n $ integral in many Lorentz-invariant systems.
+
+### Fermion-helicity Representation
+
+In the helicity amplitude method, we need to represent the particle spin in fermion spinors with its helicity. In order to realize the procedure, we at first solve the eigen-equations of helicity operator $ \hat{h} \equiv \vec{s} \cdot \hat{\vec{p}} = \vec{\sigma} \cdot \hat{\vec{p}} /2 $ , if we set the particle momentum as
+
+$$$
+\begin{aligned}
+p^\mu = \left(E_p, \left|\vec{p}\right|\sin\theta \cos\phi, \left|\vec{p}\right| \sin\theta\sin\phi, \left|\vec{p}\right| \cos\theta\right),
+\end{aligned}
+\tag{4}
+$$$
+
+then they are
+
+$$$
+\begin{aligned}
+\hat{h} \phi\left(\hat{\vec{p}},\lambda\right) = \lambda_\phi \phi\left(\hat{\vec{p}},\lambda\right), \quad \hat{h} \chi\left(\hat{\vec{p}},\lambda\right) =\lambda_\chi \chi\left(\hat{\vec{p}},\lambda\right),
+\end{aligned}
+\tag{5}
+$$$
+
+where $ \phi\left(\hat{\vec{p}}, \lambda\right) $ and $ \chi\left(\hat{\vec{p}},\lambda\right) $ are the two-component spinors for particles and anti-particles, respectively, $ \lambda = \lambda_\phi = -\lambda_\chi $ is the particle helicity. Therefore, we have the eigen-vectors
+
+$$$
+\begin{aligned}
+\phi\left(\hat{\vec{p}},+\right) = \chi\left(\hat{\vec{p}},-\right) = \begin{pmatrix} \cos\theta/2 \\ e^{i\phi} \sin\theta/2 \end{pmatrix}, \,\,\, \phi\left(\hat{\vec{p}},-\right) = \chi\left(\hat{\vec{p}}, +\right) = \begin{pmatrix} - e^{-i\phi} \sin\theta /2 \\ \cos\theta/2 \end{pmatrix}.
+\end{aligned}
+\tag{6}
+$$$
+
+The last step is to replace the fermion spins in its spinors with corresponding helicities, we carry out this step in the chiral-Weyl representation where the spinors are given by
+
+$$$
+\begin{aligned}
+u \left(p,s\right) = \begin{pmatrix} \sqrt{p\cdot \sigma} \phi_s \\ \sqrt{p \cdot \bar{\sigma}} \phi_s \end{pmatrix}, \quad v \left(p,s\right) = \begin{pmatrix} \sqrt{p\cdot \sigma} \phi_s \\ -\sqrt{p \cdot \bar{\sigma}} \phi_s \end{pmatrix}
+\end{aligned}
+\tag{7}
+$$$
+
+with $ \phi_1 = \left(1,0\right)^{\textsf{T}} $ and $ \phi_2 = \left(0,1\right)^{\textsf{T}} $ . With Eq. (6), the helicity spinors are expressed as
+
+$$$
+\begin{aligned}
+u \left(p, \pm\right) = \begin{pmatrix} \sqrt{E_p \mp \left|\vec{p}\right|} \phi\left(\hat{\vec{p}},\pm\right) \\ \sqrt{E_p \pm \left|\vec{p}\right|} \phi\left(\hat{\vec{p}}, \pm\right) \end{pmatrix}, \quad v\left(p,\pm\right) = \begin{pmatrix} \sqrt{E_p\pm \left|\vec{p}\right|} \chi\left(\hat{\vec{p}},\pm\right) \\ - \sqrt{E_p\mp \left|\vec{p}\right|} \chi\left(\hat{\vec{p}},\pm\right) \end{pmatrix}.
+\end{aligned}
+\tag{8}
+$$$
+
+In the end, we should mention the reader that spinors in different scheme have different structures but their Lorentz summation is independent of the scheme. This subsection just concentrates on the chiral-Weyl scheme which can be seen from the draft’s title.
+
+### Vector-helicity Representation
+
+Different from the case of fermion, the helicity representation is universal for vectors. Before we talk about helicity configuration of vectors, the most important thing is to remind the bound conditions for vector polarization/helicity which are
+
+$$$
+\begin{aligned}
+\epsilon\left(q,\lambda\right) \cdot q = 0, \quad \epsilon\left(q,\lambda\right) \cdot \epsilon^\ast \left(q,\lambda^\prime\right) = -\delta_{\lambda,\lambda^\prime}
+\end{aligned}
+\tag{9}
+$$$
+
+with $ q $ and $ \lambda $ being vector momentum and helicity, respectively. Here, the first equation comes from Lorentz gauge condition of vectors. In terms of the above two formulae, polarization vectors in Jacob-Wick convention are written as
+
+$$$
+\begin{aligned}
+&\epsilon^\mu \left(q,+\right) = - \frac{1}{\sqrt{2}} \left(0,1,\pm i,0\right),& \quad &\epsilon^\mu \left(q, -\right) = + \frac{1}{\sqrt{2}} \left(0,1,\mp i,0\right),
+\end{aligned}
+\tag{10}
+$$$
+
+$$$
+\begin{aligned}
+&\epsilon^\mu \left(q,0\right) = \frac{1}{\sqrt{q^2}} \left(\left|\vec{q}\right|,0,0,\pm E_q\right),& \quad &\epsilon^\mu \left(q,t\right) = \frac{1}{\sqrt{q^2}} \left(E_q,0,0,\pm \left|\vec{q}\right|\right)
+\end{aligned}
+\tag{11}
+$$$
+
+if particles travel along the $ \pm z $ axis and $ \epsilon^\mu\left(q,t\right) $ is the virtual component of vector particles. From the four helicity expressions, we arrive at the following polarization sum rule formula
+
+$$$
+\begin{aligned}
+\sum_{\lambda = \pm1,0,t} \eta\left(\lambda\right) \epsilon^{\ast\mu} \left(q,\lambda\right) \epsilon^\nu \left(q,\lambda\right) = - g^{\mu\nu},
+\end{aligned}
+\tag{12}
+$$$
+
+where $ \eta\left(\pm\right) = \eta\left(0\right) = - \eta\left(t\right) = 1 $ and $ \epsilon^\mu \left(q,t\right) = q^\mu/\sqrt{q^2} $ . In fact, utilizing the above sum rule we can decompose one $ g^{\mu\nu} $ factor into two polarization vectors with one respective Lorentz index, such that we can build two independent Lorentz structures.
+
+## Differential Decay Rates in Standard Model
+
+In this section we focus on the differential decay rate calculations of charged bottom $ b\to q\ell\bar{\nu}_\ell $ decays via helicity amplitude method. These computations will be done in the framework of Standard Model (SM) with only left-handed neutrinos in which the effective Lagrangian is
+
+$$$
+\begin{aligned}
+\mathcal{L}_{\rm eff}^{\rm SM} = - 2\sqrt{2} G_F V_{cb}  \left(\bar{q} \gamma^\mu P_L b\right) \left(\bar{\ell} \gamma_\mu P_L \nu_\ell\right),
+\end{aligned}
+\tag{13}
+$$$
+
+where $ q $ can be light up quark $ u $ or heavy charm quark $ c $ . Using the components of helicity formalism mentioned in the previous section, we rewrite the amplitude as
+
+$$$
+\begin{aligned}
+\left\langle M \ell \bar{\nu}_\ell \right| \mathcal{L}_{\rm eff}^{\rm SM} \left|N\right\rangle = 2\sqrt{2}G_FV_{cb} \sum_{\lambda_W = \pm1,0,t} \eta\left(\lambda_W\right) H_{\rm SM} \left(\lambda_W,\lambda_M,\lambda_N\right) L_{\rm SM} \left(\lambda_W, \lambda_\ell\right),
+\end{aligned}
+\tag{14}
+$$$
+
+where $ N $ is the initial hadron state, $ M $ is the final hadron state, and the Lorentz-invariant hadronic and leptonic amplitudes are given, respectively, by
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(\lambda_W,\lambda_M,\lambda_N\right) = \epsilon^{\ast\mu}\left(q,\lambda_W\right) \left\langle M \left(p_M,\lambda_M\right) \right| \bar{q} \gamma_\mu P_L b\left|N \left(p_N,\lambda_N\right)\right\rangle,
+\end{aligned}
+\tag{15}
+$$$
+
+$$$
+\begin{aligned}
+&L_{\rm SM} \left(\lambda_W,\lambda_\ell\right) = \epsilon^\nu \left(q,\lambda_W\right) \left\langle \ell\left(p_\ell, \lambda_\ell\right) \bar{\nu}_\ell \left(p_\nu,+\right) \right| \bar{\ell} \gamma_\nu P_L \nu_\ell \left| 0 \right\rangle.
+\end{aligned}
+\tag{16}
+$$$
+
+We can see from the above equations that hadronic amplitude $ H_{\rm SM} \left(\lambda_W, \lambda_M, \lambda_N\right) $ depends on the concrete forms of initial and final states $ \left| i \left(p_i, \lambda_i \right) \right\rangle_{i = M, N} $ while leptonic amplitude $ L_{\rm SM} \left(\lambda_W, \lambda_\ell\right) $ is independent of what $ \left| i \left(p_i, \lambda_i \right) \right\rangle_{i = M, N} $ is. Thus, let us write down the expressions of $ L_{\rm SM} \left(\lambda_W, \lambda_\ell\right) $ with different $ \lambda_{W,\ell} $ here:
+
+$$$
+\begin{aligned}
+&L_{\rm SM} \left(\pm,+\right) = \mp \frac{m_\ell}{\sqrt{2}} \sqrt{1-\frac{m_\ell^2}{q^2}} \sin\theta_\ell,& \quad &L_{\rm SM} \left(t, +\right) = m_\ell \sqrt{1-\frac{m_\ell^2}{q^2}},
+\end{aligned}
+\tag{17}
+$$$
+
+$$$
+\begin{aligned}
+&L_{\rm SM} \left(0,+\right) = -m_\ell \sqrt{1-\frac{m_\ell^2}{q^2}} \cos\theta_\ell,& \quad &L_{\rm SM} \left(0, -\right) = \sqrt{q^2 - m_\ell^2} \sin\theta_\ell,
+\end{aligned}
+\tag{18}
+$$$
+
+and
+
+$$$
+\begin{aligned}
+L_{\rm SM} \left(\pm, -\right) = \mp \frac{1}{\sqrt{2}} \sqrt{q^2 - m_\ell^2} \left(\cos\theta_\ell \pm 1\right),
+\end{aligned}
+\tag{19}
+$$$
+
+where $ q^\mu = p_\ell^\mu + p_\nu^\mu $ and $ \theta_\ell $ is the charged-lepton scattering angle.
+
+### $ \boldsymbol{B\to P} $ Process
+
+For the $ B $ decaying to pseudoscalar $ P $ process, we have to calculate the hadronic matrix element, namely $ \left\langle P\left(p_P, 0\right) \right|\bar{q} \gamma_\mu P_L b\left|B\left(p_B, 0\right)\right\rangle $ . However in the present case this matrix entry is often parameterized via helicity form factors $ f_{+,0}^P\left(q^2\right) $ and
+
+$$$
+\begin{aligned}
+\left\langle P \left(p_P, 0\right) \right| \bar{q} \gamma^\mu b\left| B\left(p_B, 0\right)\right\rangle = f_+^P \left[\left(p_B + p_P\right)^\mu - \frac{m_B^2 - m_P^2}{q^2} q^\mu\right] + f_0^P \frac{m_B^2 - m_P^2}{q^2} q^\mu.
+\end{aligned}
+\tag{20}
+$$$
+
+Then we arrive at the non-zero hadronic amplitudes
+
+$$$
+\begin{aligned}
+H_{\rm SM} \left(0,0\right) = f_+^P \frac{\sqrt{Q_+^P Q_-^P}}{2\sqrt{q^2}}, \quad H_{\rm SM} \left(t,0\right) = f_0^P \frac{m_B^2 - m_P^2}{2\sqrt{q^2}}
+\end{aligned}
+\tag{21}
+$$$
+
+with the kinematic relation $ f_+^P \left(0\right) = f_0^P \left(0\right) $ and SM differential decay rates. They are
+
+$$$
+\begin{aligned}
+&\frac{d\Gamma\left(B\to P\ell\bar{\nu}_\ell\right)}{dq^2} = \frac{N_B^P}{2} m_\ell^2 \left[\left(H_{V_+}^{P}\right)^2 + 3\left(H_{V_0}^{P}\right)^2\right]& \quad &{\rm for} \quad \lambda_\ell = +1/2,
+\end{aligned}
+\tag{22}
+$$$
+
+$$$
+\begin{aligned}
+&\frac{d\Gamma\left(B\to P\ell\bar{\nu}_\ell\right)}{dq^2} = N_B^P q^2 \left(H_{V_+}^P\right)^2& \quad &{\rm for} \quad \lambda_\ell = -1/2,
+\end{aligned}
+\tag{23}
+$$$
+
+and the total rate
+
+$$$
+\begin{aligned}
+\frac{d\Gamma\left(B\to P\ell\bar{\nu}_\ell\right)}{dq^2} = \frac{N_B^P}{2} \left[\left(m_\ell^2 + 2q^2\right) \left(H_{V_+}^P\right)^2 + 3m_\ell^2 \left(H_{V_0}^P\right)^2\right]
+\end{aligned}
+\tag{24}
+$$$
+
+with the prefactor and mass parameters
+
+$$$
+\begin{aligned}
+N_B^P \equiv \frac{G_F^2 \left|V_{qb}\right|^2}{192\pi^3m_B^3} \sqrt{Q_+^P Q_-^P} \left(1-\frac{m_\ell^2}{q^2}\right)^2, \quad Q_\pm^P \equiv \left(m_B \pm m_P\right)^2 - q^2,
+\end{aligned}
+\tag{25}
+$$$
+
+and the hadronic parameters
+
+$$$
+\begin{aligned}
+H_{V_+}^P \equiv \frac{\sqrt{Q_+^P Q_-^P}}{\sqrt{q^2}} f_+^P, \quad H_{V_0}^P \equiv \frac{m_B^2 - m_P^2}{\sqrt{q^2}} f_0^P.
+\end{aligned}
+\tag{26}
+$$$
+
+Once the numerical values of form factors over $ q^2 $ are given, we then can compute the differential and subsequently total decay rates.
+
+### $ \boldsymbol{B\to V} $ Process
+
+The $ B $ decaying to vector meson $ V $ situation is similar to the $ B\to P $ case, but it now has different hadronic matrix elements
+
+$$$
+\begin{aligned}
+\left\langle V\left(p_V,\lambda_V\right) \right| \bar{q} \gamma^\mu b \left|B\left(p_B,0\right) \right\rangle &= -i \epsilon^{\mu\nu\rho\sigma} \epsilon_\nu^\ast \left(p_B+p_V\right)_\rho q_\sigma \frac{V^V}{m_B + m_V},
+\end{aligned}
+\tag{27}
+$$$
+
+$$$
+\begin{aligned}
+\left\langle V\left(p_V,\lambda_V\right) \right| \bar{q} \gamma^\mu \gamma_5 b \left|B\left(p_B,0\right) \right\rangle &= A_1^V \left(m_B + m_V\right) \epsilon^{\ast\mu} - \frac{\epsilon^\ast \cdot q}{m_B + m_V} \left(p_B + p_V\right)^\mu A_2^V\\
+&+ 2m_V q^\mu \frac{\epsilon^\ast \cdot q}{q^2} \left(A_0^V - A_1^V \frac{m_B + m_V}{2m_V} + A_2^V \frac{m_B-m_V}{2m_V} \right),
+\end{aligned}
+\tag{28}
+$$$
+
+where $ \epsilon^{\mu\nu\rho\sigma} $ is Levi-Civita symbol with the convention $ \epsilon^{0123} = + 1 $ and $ V^V, A_{0,1,2}^V $ are four real form factors that comply with the bound conditions
+
+$$$
+\begin{aligned}
+A_0^V \left(0\right) = A_1^V \left(0\right) \frac{m_B + m_V}{2m_V} - A_2^V \left(0\right) \frac{m_B - m_V}{2m_V}.
+\end{aligned}
+\tag{29}
+$$$
+
+Therefore, we obtain the non-zero hadronic amplitudes
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(\pm, \pm\right) = \frac{1}{2\left(m_B+m_V\right)} \left[A_1^V \left(m_B+m_V\right)^2 \mp V^V \sqrt{Q_+^VQ_-^V}\right],
+\end{aligned}
+\tag{30}
+$$$
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(0, 0\right) = - A_{12}^V \frac{4m_B m_V}{\sqrt{q^2}}, \quad H_{\rm SM} \left(t,0\right) = -A_0^V \frac{\sqrt{Q_+^VQ_-^V}}{2\sqrt{q^2}},
+\end{aligned}
+\tag{31}
+$$$
+
+where
+
+$$$
+\begin{aligned}
+A_{12}^V \equiv \frac{A_1^V\left(m_B^2-m_V^2-q^2\right) \left(m_B+m_V\right)^2 - A_2^V Q_+^VQ_-^V}{16m_Bm_V^2 \left(m_B+m_V\right)}, \quad Q_{\pm}^V \equiv \left(m_B \pm m_V\right)^2 - q^2.
+\end{aligned}
+\tag{32}
+$$$
+
+The respective differential decay rates for $ \lambda_\ell = \pm 1/2 $ and total rate are then got as
+
+$$$
+\begin{aligned}
+&\frac{d\Gamma\left(B\to V\ell\bar{\nu}_\ell\right)}{dq^2} = \frac{N_B^V}{2}m_\ell^2 \left[\left(H_{V_+}^V\right)^2 + \left(H_{V_0}^V\right)^2 + \left(H_{V_-}^V\right)^2 + 3\left(H_{V_t}^V\right)^2\right]& \quad &{\rm for} \quad \lambda_\ell = +1/2,\\
+&\frac{d\Gamma\left(B\to V\ell\bar{\nu}_\ell\right)}{dq^2} = N_B^V q^2 \left[\left(H_{V_+}^V\right)^2 + \left(H_{V_0}^V\right)^2 + \left(H_{V_-}^V\right)^2\right]& \quad &{\rm for} \quad \lambda_\ell = -1/2,
+\end{aligned}
+$$$
+
+and
+
+$$$
+\begin{aligned}
+\frac{d\Gamma\left(B\to V\ell\bar{\nu}_\ell\right)}{dq^2} = \frac{N_B^V}{2} \left\{\left(m_\ell^2 + 2q^2\right) \left[\left(H_{V_+}^V\right)^2 + \left(H_{V_0}^V\right)^2 + \left(H_{V_-}^V\right)^2\right] + 3m_\ell^2 \left(H_{V_t}^V\right)^2\right\},
+\end{aligned}
+\tag{33}
+$$$
+
+where $ N_{B}^V $ is the same as $ N_B^P $ but with $ Q_\pm^P $ replacing by $ Q_\pm^V $ , and
+
+$$$
+\begin{aligned}
+H_{V_\pm}^V \equiv A_1^V \left(m_B + m_V\right) \mp \frac{\sqrt{Q_+^V Q_-^V}}{m_B + m_V} V^V, \,\,\, H_{V_t}^V \equiv - \frac{\sqrt{Q_+^V Q_-^V}}{\sqrt{q^2}} A_0^V, \,\,\, H_{V_0}^V \equiv - \frac{8m_B m_V}{\sqrt{q^2}} A_{12}^V.
+\end{aligned}
+$$$
+
+Once the form factors are exactly known, these decay rates can be numerically obtained.
+
+### $ \boldsymbol{\Lambda_b\to H} $ Process
+
+Regarding the baryonic $ \Lambda_b\to H $ decay, we have to remind the reader that both the initial and final hadron states are fermions. Hence we ought to parameterize the matrix entries as
+
+$$$
+\begin{aligned}
+&\left\langle H\left(p_H, \lambda_H\right) \right| \bar{q} \gamma^\mu b \left| \Lambda_b \left(p_{\Lambda_b}, \lambda_{\Lambda_b} \right) \right\rangle = \bar{u}_H \bigg[ F_+^H \left(p_{\Lambda_b}^\mu + p_H^\mu - \left(m_{\Lambda_b}^2 - m_H^2\right) \frac{q^\mu}{q^2} \right) \frac{m_{\Lambda_b}+ m_H}{Q_+^H}\\
+&\qquad\qquad\qquad\qquad + F_0^H \left(m_{\Lambda_b} - m_H\right) \frac{q^\mu}{q^2} + F_\perp^H \left(\gamma^\mu -\frac{2m_H}{Q_+^H} p_{\Lambda_b}^\mu -\frac{2m_{\Lambda_b}}{Q_+^H} p_H^\mu \right)\bigg] u_{\Lambda_b},
+\end{aligned}
+\tag{34}
+$$$
+
+$$$
+\begin{aligned}
+&\left\langle H\left(p_H, \lambda_H\right) \right| \bar{q} \gamma^\mu \gamma_5 b \left| \Lambda_b \left(p_{\Lambda_b}, \lambda_{\Lambda_b} \right) \right\rangle = -\bar{u}_H \bigg[ G_+^H \left(p_{\Lambda_b}^\mu + p_H^\mu - \left(m_{\Lambda_b}^2 - m_H^2\right) \frac{q^\mu}{q^2} \right) \frac{m_{\Lambda_b}- m_H}{Q_-^H}\\
+&\qquad\qquad\qquad\qquad + G_0^H \left(m_{\Lambda_b} + m_H\right) \frac{q^\mu}{q^2} + G_\perp^H \left(\gamma^\mu +\frac{2m_H}{Q_-^H} p_{\Lambda_b}^\mu -\frac{2m_{\Lambda_b}}{Q_-^H} p_H^\mu \right)\bigg] u_{\Lambda_b},
+\end{aligned}
+\tag{35}
+$$$
+
+in terms of six vector helicity form factors $ F_{+,0,\perp}^H, G_{+,0,\perp}^H $ and spinors $ u_{\Lambda_b, H} $ . Here, $ Q_\pm^H \equiv \left(m_{\Lambda_b} \pm m_H\right)^2 - q^2 $ are the mass parameters and the six vector real form factors satisfy the following kinematic relations at the transfer momentum endpoints $ q^2=0 $ and/or $ q^2=q_{\rm max}^2 = \left(m_{\Lambda_b}-m_H\right)^2 $ , namely $ F_+^H\left(0\right) = F_0^H \left(0\right) $ , $ G_+^H\left(0\right) = G_0^H\left(0\right) $ , and $ G_+^H \left(q_{\rm max}^2\right) = G_\perp^H \left(q_{\rm max}^2\right) $ . According to the above equations, non-vanishing hadronic amplitudes are
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(0,\pm,\pm\right) = \frac{1}{2\sqrt{q^2}} \left[\left(m_{\Lambda_b} + m_H\right) F_+^H \sqrt{Q_-^H} \mp \left(m_{\Lambda_b} - m_H\right) G_+^H \sqrt{Q_+^H} \right],
+\end{aligned}
+\tag{36}
+$$$
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(t,\pm,\pm\right) = \frac{1}{2\sqrt{q^2}} \left[\left(m_{\Lambda_b} - m_H\right) F_0^H \sqrt{Q_+^H} \mp \left(m_{\Lambda_b} + m_H\right) G_0^H \sqrt{Q_-^H} \right],
+\end{aligned}
+\tag{37}
+$$$
+
+$$$
+\begin{aligned}
+&H_{\rm SM} \left(\pm,\pm,\mp\right) = \frac{1}{\sqrt{2}} \left(F_\perp^H \sqrt{Q_-^H} \mp G_\perp^H \sqrt{Q_+^H}\right),
+\end{aligned}
+\tag{38}
+$$$
+
+and the differential decay rates are
+
+$$$
+\begin{aligned}
+\frac{d\Gamma\left(\Lambda_b\to H\ell\bar{\nu}_\ell\right)}{dq^2} &= \frac{N_{\Lambda_b}^H}{4} m_\ell^2 \bigg[\left(H_{V_+}^{H+}\right)^2 + \left(H_{V_+}^{H-}\right)^2 + 2 \left(H_{V_\perp}^{H+}\right)^2 + 2\left(H_{V_\perp}^{H-}\right)^2\\
+&+ 3\left(H_{V_0}^{H+}\right)^2 + 3\left(H_{V_0}^{H-}\right)^2 \bigg]
+\end{aligned}
+\tag{39}
+$$$
+
+for $ \lambda_\ell = +1/2 $ and
+
+$$$
+\begin{aligned}
+\frac{d\Gamma\left(\Lambda_b\to H\ell\bar{\nu}_\ell\right)}{dq^2} = \frac{N_{\Lambda_b}^H}{2} q^2 \left[\left(H_{V_+}^{H+}\right)^2 + \left(H_{V_+}^{H-}\right)^2 + 2 \left(H_{V_\perp}^{H+}\right)^2 + 2\left(H_{V_\perp}^{H-}\right)^2\right]
+\end{aligned}
+\tag{40}
+$$$
+
+for $ \lambda_\ell = -1/2 $ , where the hadronic parameters and prefactor are defined by
+
+$$$
+\begin{aligned}
+&H_{V_+}^{H\pm} \equiv \frac{1}{\sqrt{q^2}} \left[\left(m_{\Lambda_b} + m_H\right) F_+^H \sqrt{Q_-^H} \mp \left(m_{\Lambda_b} - m_H\right) G_+^H \sqrt{Q_+^H}\right],
+\end{aligned}
+\tag{41}
+$$$
+
+$$$
+\begin{aligned}
+&H_{V_0}^{H\pm} \equiv \frac{1}{\sqrt{q^2}} \left[\left(m_{\Lambda_b} - m_H\right) F_0^H \sqrt{Q_+^H} \mp \left(m_{\Lambda_b} + m_H\right) G_0^H \sqrt{Q_-^H}\right],
+\end{aligned}
+\tag{42}
+$$$
+
+$$$
+\begin{aligned}
+&H_{V_\perp}^{H\pm} \equiv F_\perp^H \sqrt{Q_-^H} \mp G_\perp^H \sqrt{Q_+^H}, \quad N_{\Lambda_b}^H \equiv \frac{G_F^2 \left|V_{qb}\right|^2}{192\pi^3m_{\Lambda_b}^3} \sqrt{Q_+^H Q_-^H} \left(1-\frac{m_\ell^2}{q^2}\right)^2,
+\end{aligned}
+\tag{43}
+$$$
+
+respectively. Hence the total decay width can be written as
+
+$$$
+\begin{aligned}
+\frac{d\Gamma\left(\Lambda_b\to H\ell\bar{\nu}_\ell\right)}{dq^2} &= \frac{N_{\Lambda_b}^H}{4} \bigg\{\left(m_\ell^2 + 2q^2\right) \bigg[\left(H_{V_+}^{H+}\right)^2 + \left(H_{V_+}^{H-}\right)^2 + 2\left(H_{V_\perp}^{H+}\right)^2 + 2\left(H_{V_\perp}^{H-}\right)^2\bigg]\\
+&+ 3m_\ell^2 \left(H_{V_0}^{H+}\right)^2 + 3m_\ell^2 \left(H_{V_0}^{H-}\right)^2 \Bigg\}.
+\end{aligned}
+\tag{44}
+$$$
+
+We can steadily derive the theoretically rate values if the form factors are given numerically.
